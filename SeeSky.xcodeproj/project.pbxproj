@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23AD841D29D027530010D868 /* Celestial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD841C29D027530010D868 /* Celestial.swift */; };
+		23AD842029D029EA0010D868 /* PlanetOfTheDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD841F29D029EA0010D868 /* PlanetOfTheDayViewController.swift */; };
+		23EFD83C29D02BEC0080E687 /* datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD83B29D02BEC0080E687 /* datas.swift */; };
+		23EFD83E29D175BB0080E687 /* MythOfTheDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD83D29D175BB0080E687 /* MythOfTheDayViewController.swift */; };
+		23EFD86729D2D5680080E687 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD86629D2D5680080E687 /* SearchViewController.swift */; };
+		23EFD86A29D2DB560080E687 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD86929D2DB560080E687 /* CategoriesTableViewCell.swift */; };
+		23EFD86E29D387B50080E687 /* DaysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD86D29D387B50080E687 /* DaysCollectionViewCell.swift */; };
 		3037C43629CC818600CEFC73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3037C43529CC818600CEFC73 /* AppDelegate.swift */; };
 		3037C43829CC818600CEFC73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3037C43729CC818600CEFC73 /* ViewController.swift */; };
 		3037C43A29CC818600CEFC73 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 3037C43929CC818600CEFC73 /* Experience.rcproject */; };
@@ -16,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23AD841C29D027530010D868 /* Celestial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celestial.swift; sourceTree = "<group>"; };
+		23AD841F29D029EA0010D868 /* PlanetOfTheDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetOfTheDayViewController.swift; sourceTree = "<group>"; };
+		23EFD83B29D02BEC0080E687 /* datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datas.swift; sourceTree = "<group>"; };
+		23EFD83D29D175BB0080E687 /* MythOfTheDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MythOfTheDayViewController.swift; sourceTree = "<group>"; };
+		23EFD86629D2D5680080E687 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		23EFD86929D2DB560080E687 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
+		23EFD86D29D387B50080E687 /* DaysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCollectionViewCell.swift; sourceTree = "<group>"; };
 		3037C43229CC818600CEFC73 /* SeeSky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3037C43529CC818600CEFC73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3037C43729CC818600CEFC73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +50,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23AD841B29D0273F0010D868 /* structures */ = {
+			isa = PBXGroup;
+			children = (
+				23AD841C29D027530010D868 /* Celestial.swift */,
+			);
+			path = structures;
+			sourceTree = "<group>";
+		};
+		23AD841E29D029C80010D868 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				23AD841F29D029EA0010D868 /* PlanetOfTheDayViewController.swift */,
+				23EFD83D29D175BB0080E687 /* MythOfTheDayViewController.swift */,
+				23EFD86629D2D5680080E687 /* SearchViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		23EFD83A29D02BDB0080E687 /* dummyData */ = {
+			isa = PBXGroup;
+			children = (
+				23EFD83B29D02BEC0080E687 /* datas.swift */,
+			);
+			path = dummyData;
+			sourceTree = "<group>";
+		};
+		23EFD86829D2DAB90080E687 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				23EFD86929D2DB560080E687 /* CategoriesTableViewCell.swift */,
+				23EFD86D29D387B50080E687 /* DaysCollectionViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		3037C42929CC818600CEFC73 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +104,10 @@
 		3037C43429CC818600CEFC73 /* SeeSky */ = {
 			isa = PBXGroup;
 			children = (
+				23EFD86829D2DAB90080E687 /* cells */,
+				23EFD83A29D02BDB0080E687 /* dummyData */,
+				23AD841E29D029C80010D868 /* controllers */,
+				23AD841B29D0273F0010D868 /* structures */,
 				3037C43529CC818600CEFC73 /* AppDelegate.swift */,
 				3037C43729CC818600CEFC73 /* ViewController.swift */,
 				3037C43929CC818600CEFC73 /* Experience.rcproject */,
@@ -136,9 +189,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AD841D29D027530010D868 /* Celestial.swift in Sources */,
+				23EFD83C29D02BEC0080E687 /* datas.swift in Sources */,
+				23EFD86A29D2DB560080E687 /* CategoriesTableViewCell.swift in Sources */,
+				23EFD86E29D387B50080E687 /* DaysCollectionViewCell.swift in Sources */,
+				23EFD86729D2D5680080E687 /* SearchViewController.swift in Sources */,
+				23EFD83E29D175BB0080E687 /* MythOfTheDayViewController.swift in Sources */,
 				3037C43829CC818600CEFC73 /* ViewController.swift in Sources */,
 				3037C43629CC818600CEFC73 /* AppDelegate.swift in Sources */,
 				3037C43A29CC818600CEFC73 /* Experience.rcproject in Sources */,
+				23AD842029D029EA0010D868 /* PlanetOfTheDayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
