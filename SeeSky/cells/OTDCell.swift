@@ -7,11 +7,11 @@
 
 import UIKit
 
-class DaysCollectionViewCell: UICollectionViewCell {
+class OTDCell: UICollectionViewCell {
     
     
     
-    @IBOutlet weak var nameSectionLbl: UILabel!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var img: UIImageView!
     
 }

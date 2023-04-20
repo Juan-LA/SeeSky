@@ -7,24 +7,24 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
-
-
-    
-    @IBOutlet weak var collectionSectionDay: UICollectionView!
-    
-    @IBOutlet weak var table: UITableView!
+class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
-
+    
+    @IBOutlet weak var sectionOTD: UICollectionView!
+    
+    @IBOutlet weak var sectionCategories: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionSectionDay.delegate = self
-        collectionSectionDay.dataSource = self
+        sectionOTD.delegate = self
+        sectionOTD.dataSource = self
         
-        table.delegate = self
-        table.dataSource = self
+        sectionCategories.delegate = self
+        sectionCategories.dataSource = self
+        
         
         // Do any additional setup after loading the view.
     }
@@ -35,43 +35,44 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return sectionOfTheDay.count
     }
     
+    
+    ///Function to create cell of collection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionSectionDay.dequeueReusableCell(withReuseIdentifier: "collectionOfTheDay", for: indexPath) as! DaysCollectionViewCell
         
-        print(cell)
+        ///Cells for Section Of The Day
+        if collectionView == self.sectionOTD {
+            let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "cellOTD", for: indexPath) as! OTDCell
+            
+            print(cell)
+            
+            cell.name.text = sectionOfTheDay[indexPath.row]
+            
+            return cell
+        } else {
+            ///Cells for Categories Section
+           
+            let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath) as! CategoryCell
+                
+            cell.name.text = sectionOfTheDay[indexPath.row]
+            
+            return cell
+            
+        }
         
-        cell.nameSectionLbl.text = sectionOfTheDay[indexPath.row]
         
-        return cell
+        
+        
+        
+        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
         
     }
-    
-    
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return search.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "cellCategories") as! CategoriesTableViewCell
-        
-        cell.name.text = search[indexPath.row]
-        
-        return cell
-        
-        
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

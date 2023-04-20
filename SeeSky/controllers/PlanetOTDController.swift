@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlanetOfTheDayViewController: UIViewController {
+class PlanetOTDController: UIViewController {
     
     
     
@@ -20,7 +20,6 @@ class PlanetOfTheDayViewController: UIViewController {
     @IBOutlet weak var desc: UITextView!
     
     
-    @IBOutlet weak var details: UITextView!
     
     
     
@@ -34,9 +33,9 @@ class PlanetOfTheDayViewController: UIViewController {
         planetLbl.textColor = .white
         desc.textColor = .white
         desc.backgroundColor = #colorLiteral(red: 0.08626819402, green: 0.0862794593, blue: 0.2283709049, alpha: 1)
-        details.textColor = .white
+//        details.textColor = .white
         desc.backgroundColor = #colorLiteral(red: 0.08626819402, green: 0.0862794593, blue: 0.2283709049, alpha: 1)
-        details.backgroundColor = #colorLiteral(red: 0.08626819402, green: 0.0862794593, blue: 0.2283709049, alpha: 1)
+//        details.backgroundColor = #colorLiteral(red: 0.08626819402, green: 0.0862794593, blue: 0.2283709049, alpha: 1)
         
         updateUI()
 
@@ -47,7 +46,7 @@ class PlanetOfTheDayViewController: UIViewController {
         planetLbl.text = planetOfDay.name
         imagePlanet.image = planetOfDay.image
         desc.text = planetOfDay.description
-        details.text = planetOfDay.technical
+//        details.text = planetOfDay.technical
         
     }
     
