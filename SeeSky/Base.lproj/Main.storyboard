@@ -47,7 +47,7 @@
                                         <rect key="frame" x="20" y="5" width="374" height="639"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="50" id="HEY-Vf-8C2" customClass="FavTableViewCell" customModule="SeeSky" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellFav" rowHeight="50" id="HEY-Vf-8C2" customClass="FavTableViewCell" customModule="SeeSky" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="374" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HEY-Vf-8C2" id="hrY-kk-5zx">
@@ -116,6 +116,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="800"/>
                     <connections>
+                        <outlet property="tableFavorite" destination="Q9A-fM-eC1" id="5Ag-Ht-3dJ"/>
                         <outlet property="titleLbl" destination="AON-jt-Rb5" id="tDi-Xx-UYj"/>
                     </connections>
                 </viewController>
@@ -123,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="7587" y="-428"/>
         </scene>
-        <!--View Controller-->
+        <!--Celestial View Controller-->
         <scene sceneID="b7Y-ha-Qzs">
             <objects>
-                <viewController id="wdo-Id-SdO" sceneMemberID="viewController">
+                <viewController id="wdo-Id-SdO" customClass="CelestialViewController" customModule="SeeSky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ot-Sy-gh6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1490"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,15 +344,23 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="1500"/>
+                    <connections>
+                        <outlet property="OTDLbl" destination="wqb-KS-NLL" id="Msp-iM-MaA"/>
+                        <outlet property="celestialImg" destination="GgF-e3-6vh" id="vLZ-5i-Vmk"/>
+                        <outlet property="celestialLbl" destination="xSy-QV-PeI" id="s7Y-DS-VUL"/>
+                        <outlet property="celestialNearby" destination="8kw-Nl-FFm" id="fCQ-yg-gNp"/>
+                        <outlet property="curiositiesTxt" destination="5JG-Nk-aUf" id="Sed-eV-QJ6"/>
+                        <outlet property="desc" destination="AA3-L4-OyV" id="OHK-Z6-CbE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Du-um-DOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9610" y="500"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="yz4-13-j4q">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="cGX-OY-PJB" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="cGX-OY-PJB" customClass="SearchViewController" customModule="SeeSky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Myz-bX-9JM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -634,6 +643,11 @@
                     </view>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
+                        <outlet property="CategoriesSectTitle" destination="I7y-pd-aNf" id="dL8-ub-8DJ"/>
+                        <outlet property="OTDSectionTitle" destination="RL6-iP-s9g" id="1rR-j7-F7d"/>
+                        <outlet property="sectionCategories" destination="XbH-ee-ouM" id="uja-Tt-ejh"/>
+                        <outlet property="sectionOTD" destination="kyl-hv-Hlt" id="hxp-mJ-L7c"/>
+                        <outlet property="titlePage" destination="li2-1w-sHI" id="g8m-UJ-l1n"/>
                         <segue destination="ecJ-fm-wby" kind="show" id="dHf-tw-50b"/>
                     </connections>
                 </viewController>
@@ -694,7 +708,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkP-Fo-AJq">
-                                <rect key="frame" x="148" y="53" width="119.5" height="36"/>
+                                <rect key="frame" x="147.5" y="53" width="119.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -766,7 +780,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xc-xC-QeD">
-                                <rect key="frame" x="154" y="65" width="107" height="36"/>
+                                <rect key="frame" x="153.5" y="65" width="107" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

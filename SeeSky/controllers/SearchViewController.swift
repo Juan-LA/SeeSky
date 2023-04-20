@@ -7,13 +7,18 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var titlePage: UILabel!
+    
+    @IBOutlet weak var OTDSectionTitle: UILabel!
+    
+    @IBOutlet weak var CategoriesSectTitle: UILabel!
     
     
     @IBOutlet weak var sectionOTD: UICollectionView!
     
-    @IBOutlet weak var sectionCategories: UICollectionView!
+    @IBOutlet weak var sectionCategories: UITableView!
     
     
     override func viewDidLoad() {
@@ -40,24 +45,22 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         ///Cells for Section Of The Day
-        if collectionView == self.sectionOTD {
-            let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "cellOTD", for: indexPath) as! OTDCell
-            
-            print(cell)
-            
-            cell.name.text = sectionOfTheDay[indexPath.row]
-            
-            return cell
-        } else {
-            ///Cells for Categories Section
-           
-            let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath) as! CategoryCell
-                
-            cell.name.text = sectionOfTheDay[indexPath.row]
-            
-            return cell
-            
-        }
+        let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "cellOTD", for: indexPath) as! OTDCell
+        
+        print(cell)
+        
+        cell.name.text = sectionOfTheDay[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
         
         
         
@@ -74,5 +77,5 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
          }
          */
         
-    }
+    
 }

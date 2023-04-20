@@ -29,19 +29,3 @@ let favorites = [Celestial(name: "a", image: UIImage(named: "andromeda-cons")!, 
                  Celestial(name: "f", image: UIImage(named: "andromeda-cons")!, description: "bello", technical: "molto bello", isFavorite: false)]
 
 
-
-
-
-func getFavorites(_ list: [Celestial]) -> [Celestial] {
-    
-    var result: [Celestial] = []
-    
-    for i in list {
-        if i.isFavorite {
-            result.append(i)
-        }
-    }
-    
-    return result
-    
-}

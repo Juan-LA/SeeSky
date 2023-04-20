@@ -26,3 +26,18 @@ class Celestial {
         self.isFavorite = isFavorite
     }
 }
+
+///Function that retrieves Celestials with isFavorite flag ON
+func getFavorites(_ list: [Celestial]) -> [Celestial] {
+    
+    var result: [Celestial] = []
+    
+    for i in list {
+        if i.isFavorite {
+            result.append(i)
+        }
+    }
+    
+    return result
+    
+}

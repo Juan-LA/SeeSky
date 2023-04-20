@@ -7,17 +7,21 @@
 
 import UIKit
 
-class PlanetOTDController: UIViewController {
+class CelestialViewController: UIViewController {
     
     
-    
-    @IBOutlet weak var planetLbl: UILabel! //this is the name of the planet
-    
-    
-    @IBOutlet weak var imagePlanet: UIImageView! //this is for the image of the planet
-    
-    
+    @IBOutlet weak var OTDLbl: NSLayoutConstraint!
+    ///Name of the celestial
+    @IBOutlet weak var celestialLbl: UILabel!
+    ///Image of the celestial
+    @IBOutlet weak var celestialImg: UIImageView!
+    ///Description
     @IBOutlet weak var desc: UITextView!
+    ///Curiosity
+    @IBOutlet weak var curiositiesTxt: UITextView!
+    ///Collection with celestials nearby
+    @IBOutlet weak var celestialNearby: UICollectionView!
+    
     
     
     
@@ -30,7 +34,7 @@ class PlanetOTDController: UIViewController {
         
         self.view.backgroundColor = #colorLiteral(red: 0.08626819402, green: 0.0862794593, blue: 0.2283709049, alpha: 1)
         
-        planetLbl.textColor = .white
+//        planetLbl.textColor = .white
         desc.textColor = .white
         desc.backgroundColor = #colorLiteral(red: 0.08626819402, green: 0.0862794593, blue: 0.2283709049, alpha: 1)
 //        details.textColor = .white

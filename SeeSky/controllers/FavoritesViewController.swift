@@ -36,7 +36,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableFavorite.dequeueReusableCell(withIdentifier: "cell") as! FavTableViewCell
+        let cell = tableFavorite.dequeueReusableCell(withIdentifier: "cellFav") as! FavTableViewCell
         
         cell.name.text = fav[indexPath.row].name
         
