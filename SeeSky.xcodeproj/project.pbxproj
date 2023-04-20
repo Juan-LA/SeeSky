@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23AD841D29D027530010D868 /* Celestial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD841C29D027530010D868 /* Celestial.swift */; };
+		232C51DC29F13BF9003143AD /* Celestial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C51DB29F13BF9003143AD /* Celestial.swift */; };
 		23AD842029D029EA0010D868 /* PlanetOfTheDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD841F29D029EA0010D868 /* PlanetOfTheDayViewController.swift */; };
 		23EFD83C29D02BEC0080E687 /* datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD83B29D02BEC0080E687 /* datas.swift */; };
 		23EFD83E29D175BB0080E687 /* MythOfTheDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD83D29D175BB0080E687 /* MythOfTheDayViewController.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23AD841C29D027530010D868 /* Celestial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celestial.swift; sourceTree = "<group>"; };
+		232C51DB29F13BF9003143AD /* Celestial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celestial.swift; sourceTree = "<group>"; };
 		23AD841F29D029EA0010D868 /* PlanetOfTheDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetOfTheDayViewController.swift; sourceTree = "<group>"; };
 		23EFD83B29D02BEC0080E687 /* datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datas.swift; sourceTree = "<group>"; };
 		23EFD83D29D175BB0080E687 /* MythOfTheDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MythOfTheDayViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		23AD841B29D0273F0010D868 /* structures */ = {
 			isa = PBXGroup;
 			children = (
-				23AD841C29D027530010D868 /* Celestial.swift */,
+				232C51DB29F13BF9003143AD /* Celestial.swift */,
 			);
 			path = structures;
 			sourceTree = "<group>";
@@ -189,9 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23AD841D29D027530010D868 /* Celestial.swift in Sources */,
 				23EFD83C29D02BEC0080E687 /* datas.swift in Sources */,
 				23EFD86A29D2DB560080E687 /* CategoriesTableViewCell.swift in Sources */,
+				232C51DC29F13BF9003143AD /* Celestial.swift in Sources */,
 				23EFD86E29D387B50080E687 /* DaysCollectionViewCell.swift in Sources */,
 				23EFD86729D2D5680080E687 /* SearchViewController.swift in Sources */,
 				23EFD83E29D175BB0080E687 /* MythOfTheDayViewController.swift in Sources */,
