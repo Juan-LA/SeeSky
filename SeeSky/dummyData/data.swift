@@ -17,7 +17,7 @@ var mythOfDay: Celestial = Celestial(name: "Andromeda", image: UIImage(named: "a
 
 
 
-let search = ["Constellation", "Planets", "Satellites", "Stars", "Galaxies", "Meteores"]
+
 
 let sectionOfTheDay = ["Planet of the day","Myth of the day"]
 

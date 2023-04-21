@@ -22,13 +22,6 @@ class CelestialViewController: UIViewController {
     ///Collection with celestials nearby
     @IBOutlet weak var celestialNearby: UICollectionView!
     
-    
-    
-    
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         

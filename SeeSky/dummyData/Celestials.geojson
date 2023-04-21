@@ -1,0 +1,252 @@
+[
+{
+  "name": "Moon",
+  "type": "satellite",
+  "average_distance_from_sun": "150 million km",
+  "mass": "7.342 × 10²² kg",
+  "equatorial_radius": "1,737.1 km",
+  "composition": "rock, ice",
+  "orbital_period": "27.3 days",
+  "average_orbital_speed": "1,022 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/781_Moon.png",
+  "isFavorite": false,
+  "desc": ""
+},
+{
+  "name": "Earth",
+  "type": "planet",
+  "average_distance_from_sun": "149.6 million km",
+  "mass": "5.97 × 10²⁴ kg",
+  "equatorial_radius": "6,378 km",
+  "composition": "rock, water, gas",
+  "orbital_period": "365.25 days",
+  "average_orbital_speed": "107,200 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/823_PIA22076.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Mars",
+  "type": "planet",
+  "average_distance_from_sun": "228 million km",
+  "mass": "6.39 × 10²³ kg",
+  "equatorial_radius": "3,390 km",
+  "composition": "rock, ice, iron",
+  "orbital_period": "687 days",
+  "average_orbital_speed": "24.077 km/s",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/780_Mars.png",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Venus",
+  "type": "planet",
+  "average_distance_from_sun": "108.2 million km",
+  "mass": "4.87 × 10²⁴ kg",
+  "equatorial_radius": "6,051.8 km",
+  "composition": "rock, metal",
+  "orbital_period": "224.7 days",
+  "average_orbital_speed": "126,000 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/785_PIA00257.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Jupiter",
+  "type": "planet",
+  "average_distance_from_sun": "778.5 million km",
+  "mass": "1.898 × 10²⁷ kg",
+  "equatorial_radius": "71,492 km",
+  "composition": "gas, primarily hydrogen and helium",
+  "orbital_period": "11.9 years",
+  "average_orbital_speed": "47,000 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2440_PIA23623.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Saturn",
+  "type": "planet",
+  "average_distance_from_sun": "1.4 billion km",
+  "mass": "5.68 × 10²⁶ kg",
+  "equatorial_radius": "60,268 km",
+  "composition": "gas, primarily hydrogen and helium",
+  "orbital_period": "29.5 years",
+  "average_orbital_speed": "34,500 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2488_PIA17200.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Uranus",
+  "type": "planet",
+  "average_distance_from_sun": "2.9 billion km",
+  "mass": "8.68 × 10²⁵ kg",
+  "equatorial_radius": "25,559 km",
+  "composition": "gas, primarily hydrogen and helium",
+  "orbital_period": "84 years",
+  "average_orbital_speed": "24,477 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2547_PIA18182.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Neptune",
+  "type": "planet",
+  "average_distance_from_sun": "4.5 billion km",
+  "mass": "1.02 × 10²⁶ kg",
+  "equatorial_radius": "24,764 km",
+  "composition": "gas, primarily hydrogen and helium",
+  "orbital_period": "164.8 years",
+  "average_orbital_speed": "19,566 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2550_PIA01492.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Pluto",
+  "type": "dwarf planet",
+  "average_distance_from_sun": "5.9 billion km",
+  "mass": "1.31 × 10²² kg",
+  "equatorial_radius": "1,188.3 km",
+  "composition": "rock, ice",
+  "orbital_period": "248 years",
+  "average_orbital_speed": "4,740 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/112_Pluto_Face_07_15_15.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Ceres",
+  "type": "asteroid",
+  "average_distance_from_sun": "414 million km",
+  "mass": "9.39 × 10²⁰ kg",
+  "equatorial_radius": "473 km",
+  "composition": "rock, ice",
+  "orbital_period": "4.6 years",
+  "average_orbital_speed": "64,728 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/791_ceres.png",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Sun",
+  "type": "star",
+  "average_distance_from_sun": "0 km",
+  "mass": "1.989 × 10³⁰ kg",
+  "equatorial_radius": "695,508 km",
+  "composition": "gas, primarily hydrogen and helium",
+  "orbital_period": "NaN",
+  "average_orbital_speed": "NaN",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/162_Sun.png",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Alpha Centauri",
+  "type": "star system",
+  "average_distance_from_sun": "4.35 light years",
+  "mass": "1.989 × 10³⁰ kg",
+  "equatorial_radius": "695,508 km",
+  "composition": "gas, primarily hydrogen and helium",
+  "orbital_period": "NaN",
+  "average_orbital_speed": "NaN",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/841_alpha_centauri_01.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Betelgeuse",
+  "type": "star",
+  "average_distance_from_sun": "642.5 light years",
+  "mass": "17.5 × mass of the Sun",
+  "equatorial_radius": "936 × radius of the Sun",
+  "composition": "gas, primarily hydrogen and helium",
+  "orbital_period": "NaN",
+  "average_orbital_speed": "NaN",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/847_Betelgeuse.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Andromeda Galaxy",
+  "type": "galaxy",
+  "average_distance_from_sun": "2.5 million light years",
+  "mass": "1.5 trillion × mass of the Sun",
+  "diameter": "220,000 light years",
+  "composition": "gas, dust, and stars",
+  "orbital_period": "NaN",
+  "average_orbital_speed": "NaN",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/883_1_m31_4k.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Whirlpool Galaxy",
+  "type": "galaxy",
+  "average_distance_from_sun": "23 million light years",
+  "mass": "160 billion × mass of the Sun",
+  "diameter": "60,000 light years",
+  "composition": "gas, dust, and stars",
+  "orbital_period": "NaN",
+  "average_orbital_speed": "NaN",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/888_Whirlpool_Galaxy.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Orion Nebula",
+  "type": "nebula",
+  "average_distance_from_sun": "1,344 light years",
+  "diameter": "24 light years",
+  "composition": "gas and dust",
+  "orbital_period": "NaN",
+  "average_orbital_speed": "NaN",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/980_orion_hires.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Bennu",
+  "type": "asteroid",
+  "average_distance_from_sun": "207 million km",
+  "mass": "7.8 × 10¹⁰ kg",
+  "equatorial_radius": "282 m",
+  "composition": "rock and metal",
+  "orbital_period": "436.6 days",
+  "average_orbital_speed": "101,000 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2516_PIA23114-web.jpg",
+  "isFavorite": false,
+  "desc": ""
+
+},
+{
+  "name": "Eros",
+  "type": "asteroid",
+  "average_distance_from_sun": "205 million km",
+  "mass": "6.7 × 10¹⁵ kg",
+  "equatorial_radius": "16.8 km",
+  "composition": "rock and metal",
+  "orbital_period": "642.9 days",
+  "average_orbital_speed": "27,700 km/h",
+  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/792_eros.png",
+  "isFavorite": false,
+  "desc": ""
+
+}
+]
