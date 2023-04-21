@@ -34,7 +34,7 @@ class CelestialViewController: UIViewController {
         
         self.view.backgroundColor = #colorLiteral(red: 0.08626819402, green: 0.0862794593, blue: 0.2283709049, alpha: 1)
         
-//        planetLbl.textColor = .white
+        celestialLbl.textColor = .white
         desc.textColor = .white
         desc.backgroundColor = #colorLiteral(red: 0.08626819402, green: 0.0862794593, blue: 0.2283709049, alpha: 1)
 //        details.textColor = .white
@@ -47,8 +47,8 @@ class CelestialViewController: UIViewController {
     }
     
     func updateUI() {
-        planetLbl.text = planetOfDay.name
-        imagePlanet.image = planetOfDay.image
+        celestialLbl.text = planetOfDay.name
+        celestialImg.image = planetOfDay.image
         desc.text = planetOfDay.description
 //        details.text = planetOfDay.technical
         
