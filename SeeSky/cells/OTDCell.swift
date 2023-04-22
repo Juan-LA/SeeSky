@@ -12,6 +12,9 @@ class OTDCell: UICollectionViewCell {
     
     @IBOutlet weak var spaceForImg: UIView!
     
+    
+    @IBOutlet weak var spaceForName: UIView!
+    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var img: UIImageView!
     

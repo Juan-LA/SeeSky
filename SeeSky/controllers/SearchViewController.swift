@@ -59,7 +59,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         sectionOTD.delegate = self
         sectionOTD.dataSource = self
         
-        sectionOTD.backgroundView?.backgroundColor = .blue
+        
+        
+//        sectionOTD.backgroundView?.backgroundColor = .blue
         sectionOTD.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
         
         ///Categories Section
@@ -67,8 +69,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         sectionCategories.delegate = self
         sectionCategories.dataSource = self
-        
-        sectionCategories.backgroundView?.backgroundColor = .green
+ 
+//        sectionCategories.backgroundView?.backgroundColor = .green
         sectionCategories.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
         sectionCategories.tableFooterView = nil
         
@@ -104,6 +106,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.spaceForImg.backgroundColor = .clear
         cell.spaceForImg.layer.cornerRadius = 16
         
+        cell.spaceForName.backgroundColor = .clear
+        cell.spaceForName.layer.cornerRadius = 16
         
         ///HStack
         cell.hStack.layer.cornerRadius = 16

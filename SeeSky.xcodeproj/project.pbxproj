@@ -42,6 +42,7 @@
 		3037C43E29CC818A00CEFC73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3037C44129CC818A00CEFC73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3080C6FC29F41ED800271C7C /* Celestials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Celestials.json; sourceTree = "<group>"; };
+		3080C70029F494D000271C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3312D2FC800194EDE3017AA1 /* Pods-SeeSky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeSky.release.xcconfig"; path = "Target Support Files/Pods-SeeSky/Pods-SeeSky.release.xcconfig"; sourceTree = "<group>"; };
 		59457E985522C42B03CD5579 /* Pods_SeeSky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeeSky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D3334A23B84781D6B90995 /* Pods-SeeSky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeSky.debug.xcconfig"; path = "Target Support Files/Pods-SeeSky/Pods-SeeSky.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		3037C43429CC818600CEFC73 /* SeeSky */ = {
 			isa = PBXGroup;
 			children = (
+				3080C70029F494D000271C7C /* Info.plist */,
 				23EFD86829D2DAB90080E687 /* cells */,
 				23EFD83A29D02BDB0080E687 /* dummyData */,
 				23AD841E29D029C80010D868 /* controllers */,
@@ -424,12 +426,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4Q64HMZS63;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SeeSky/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -459,12 +463,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4Q64HMZS63;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SeeSky/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
