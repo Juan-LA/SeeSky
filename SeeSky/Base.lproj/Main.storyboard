@@ -458,8 +458,10 @@
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="200" height="150"/>
                                                         <connections>
+                                                            <outlet property="hStack" destination="Yiv-wL-CJ0" id="IZl-Wz-JYt"/>
                                                             <outlet property="img" destination="leg-dd-1sO" id="0bB-3n-5pw"/>
                                                             <outlet property="name" destination="v50-Mw-5BY" id="euk-9b-Fjc"/>
+                                                            <outlet property="spaceForImg" destination="mRP-rh-M6k" id="ilv-F8-Oeg"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>

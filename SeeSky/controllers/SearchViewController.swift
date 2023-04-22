@@ -99,6 +99,17 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.name.textColor = .white
         
         cell.img.image = UIImage(systemName: "house.fill")
+        cell.img.layer.cornerRadius = 16
+        
+        cell.spaceForImg.backgroundColor = .clear
+        cell.spaceForImg.layer.cornerRadius = 16
+        
+        
+        ///HStack
+        cell.hStack.layer.cornerRadius = 16
+        cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
+        cell.hStack.layer.borderWidth = 2
+        cell.hStack.layer.backgroundColor =  CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1)
         
 //        cell.img.kf.setImage(with: URL(string: firstElem[indexPath.row].image))
 //        
