@@ -21,6 +21,7 @@
 		3037C43D29CC818600CEFC73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3037C43B29CC818600CEFC73 /* Main.storyboard */; };
 		3037C43F29CC818A00CEFC73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3037C43E29CC818A00CEFC73 /* Assets.xcassets */; };
 		3037C44229CC818A00CEFC73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3037C44029CC818A00CEFC73 /* LaunchScreen.storyboard */; };
+		3080C6FD29F41ED900271C7C /* Celestials.json in Resources */ = {isa = PBXBuildFile; fileRef = 3080C6FC29F41ED800271C7C /* Celestials.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,7 @@
 		3037C43C29CC818600CEFC73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3037C43E29CC818A00CEFC73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3037C44129CC818A00CEFC73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3080C6FB29F299DA00271C7C /* Celestials.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Celestials.geojson; sourceTree = "<group>"; };
+		3080C6FC29F41ED800271C7C /* Celestials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Celestials.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				232C51DB29F13BF9003143AD /* Celestial.swift */,
+				3080C6FC29F41ED800271C7C /* Celestials.json */,
 			);
 			path = structures;
 			sourceTree = "<group>";
@@ -75,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				23EFD83B29D02BEC0080E687 /* data.swift */,
-				3080C6FB29F299DA00271C7C /* Celestials.geojson */,
 			);
 			path = dummyData;
 			sourceTree = "<group>";
@@ -181,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3080C6FD29F41ED900271C7C /* Celestials.json in Resources */,
 				3037C44229CC818A00CEFC73 /* LaunchScreen.storyboard in Resources */,
 				3037C43F29CC818A00CEFC73 /* Assets.xcassets in Resources */,
 				3037C43D29CC818600CEFC73 /* Main.storyboard in Resources */,

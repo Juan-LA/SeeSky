@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fGk-dm-0c6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cGX-OY-PJB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -451,10 +451,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XbH-ee-ouM">
-                                                <rect key="frame" x="20" y="260" width="374" height="647"/>
+                                                <rect key="frame" x="20" y="260" width="374" height="747"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="NoF-2r-NPm">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="120" id="NoF-2r-NPm" customClass="CategoryCell" customModule="SeeSky" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="50" width="374" height="120"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NoF-2r-NPm" id="7Z8-Cj-Clp">
@@ -487,6 +487,10 @@
                                                                 <constraint firstAttribute="trailing" secondItem="3PT-4y-JQ7" secondAttribute="trailing" constant="10" id="rDa-Rx-l61"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="img" destination="Koc-GB-0QB" id="z9J-fi-jeV"/>
+                                                            <outlet property="name" destination="gHq-8g-aMN" id="JAW-e7-Lzj"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="aOn-M5-2wG">
                                                         <rect key="frame" x="0.0" y="170" width="374" height="120"/>
@@ -600,7 +604,7 @@
                                             <constraint firstItem="kyl-hv-Hlt" firstAttribute="leading" secondItem="wP1-X3-oTK" secondAttribute="leading" constant="20" id="D7m-24-9cN"/>
                                             <constraint firstItem="I7y-pd-aNf" firstAttribute="top" secondItem="kyl-hv-Hlt" secondAttribute="bottom" constant="20" id="YtQ-dH-WNE"/>
                                             <constraint firstItem="kyl-hv-Hlt" firstAttribute="top" secondItem="RL6-iP-s9g" secondAttribute="bottom" constant="10" id="aDh-cX-cuD"/>
-                                            <constraint firstAttribute="bottom" secondItem="XbH-ee-ouM" secondAttribute="bottom" constant="100" id="cJq-a6-Ev5"/>
+                                            <constraint firstAttribute="bottom" secondItem="XbH-ee-ouM" secondAttribute="bottom" id="cJq-a6-Ev5"/>
                                             <constraint firstItem="XbH-ee-ouM" firstAttribute="leading" secondItem="wP1-X3-oTK" secondAttribute="leading" constant="20" id="dGP-Mc-uOR"/>
                                             <constraint firstItem="RL6-iP-s9g" firstAttribute="top" secondItem="wP1-X3-oTK" secondAttribute="top" constant="10" id="dRK-Cn-23j"/>
                                             <constraint firstItem="I7y-pd-aNf" firstAttribute="leading" secondItem="wP1-X3-oTK" secondAttribute="leading" constant="20" id="eTz-Kf-In1"/>

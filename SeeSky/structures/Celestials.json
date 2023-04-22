@@ -10,6 +10,7 @@
   "average_orbital_speed": "1,022 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/781_Moon.png",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 },
 {
@@ -23,6 +24,7 @@
   "average_orbital_speed": "107,200 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/823_PIA22076.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -37,6 +39,7 @@
   "average_orbital_speed": "24.077 km/s",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/780_Mars.png",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -51,6 +54,7 @@
   "average_orbital_speed": "126,000 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/785_PIA00257.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -65,6 +69,7 @@
   "average_orbital_speed": "47,000 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2440_PIA23623.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -79,6 +84,7 @@
   "average_orbital_speed": "34,500 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2488_PIA17200.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -93,6 +99,7 @@
   "average_orbital_speed": "24,477 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2547_PIA18182.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -107,6 +114,7 @@
   "average_orbital_speed": "19,566 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2550_PIA01492.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -121,6 +129,7 @@
   "average_orbital_speed": "4,740 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/112_Pluto_Face_07_15_15.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -135,6 +144,7 @@
   "average_orbital_speed": "64,728 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/791_ceres.png",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -149,6 +159,7 @@
   "average_orbital_speed": "NaN",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/162_Sun.png",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -163,6 +174,7 @@
   "average_orbital_speed": "NaN",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/841_alpha_centauri_01.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -177,6 +189,7 @@
   "average_orbital_speed": "NaN",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/847_Betelgeuse.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -185,12 +198,13 @@
   "type": "galaxy",
   "average_distance_from_sun": "2.5 million light years",
   "mass": "1.5 trillion × mass of the Sun",
-  "diameter": "220,000 light years",
+  "equatorial_radius": "220,000 light years",
   "composition": "gas, dust, and stars",
   "orbital_period": "NaN",
   "average_orbital_speed": "NaN",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/883_1_m31_4k.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -199,12 +213,13 @@
   "type": "galaxy",
   "average_distance_from_sun": "23 million light years",
   "mass": "160 billion × mass of the Sun",
-  "diameter": "60,000 light years",
+  "equatorial_radius": "60,000 light years",
   "composition": "gas, dust, and stars",
   "orbital_period": "NaN",
   "average_orbital_speed": "NaN",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/888_Whirlpool_Galaxy.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -212,12 +227,14 @@
   "name": "Orion Nebula",
   "type": "nebula",
   "average_distance_from_sun": "1,344 light years",
-  "diameter": "24 light years",
+  "mass": "160 billion × mass of the Sun",
+  "equatorial_radius": "24 light years",
   "composition": "gas and dust",
   "orbital_period": "NaN",
   "average_orbital_speed": "NaN",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/980_orion_hires.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -232,6 +249,7 @@
   "average_orbital_speed": "101,000 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2516_PIA23114-web.jpg",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 },
@@ -246,6 +264,7 @@
   "average_orbital_speed": "27,700 km/h",
   "image": "https://solarsystem.nasa.gov/system/resources/detail_files/792_eros.png",
   "isFavorite": false,
+  "isOTD" : false,
   "desc": ""
 
 }

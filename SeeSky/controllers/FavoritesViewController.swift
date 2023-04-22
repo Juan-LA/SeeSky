@@ -14,7 +14,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableFavorite: UITableView!
     
-    var fav = getFavorites(favorites)
+    var fav = getFavorites()
     
 
     override func viewDidLoad() {

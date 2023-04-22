@@ -15,10 +15,21 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var CategoriesSectTitle: UILabel!
     
-    
     @IBOutlet weak var sectionOTD: UICollectionView!
     
     @IBOutlet weak var sectionCategories: UITableView!
+    
+    ///Data
+    var constellations : [Celestial] = getListType("constellation")
+    var planets : [Celestial] = getListType("planet")
+    var asteroids : [Celestial] = getListType("asteroid")
+    var stars : [Celestial] = getListType("star")
+    var galaxies : [Celestial] = getListType("galaxy")
+    var nebulas : [Celestial] = getListType("nebula")
+    
+    ///Elements OTD section
+    var elemOTD : [Celestial] = getOTD()
+    
     
     
     override func viewDidLoad() {
@@ -37,7 +48,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sectionOfTheDay.count
+        return elemOTD.count
     }
     
     
@@ -48,18 +59,23 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "cellOTD", for: indexPath) as! OTDCell
         
         print(cell)
-        
-        cell.name.text = sectionOfTheDay[indexPath.row]
+//        
+//        cell.name.text = sectionOTD[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = sectionCategories.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCell
+        
+        cell.name.text = categories[indexPath.row]
+        cell.img.image = UIImage(systemName: "house.fill")
+        
+        return cell
     }
         
         
