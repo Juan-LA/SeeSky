@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D8624857A93F21681D6EB94 /* Pods_SeeSky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59457E985522C42B03CD5579 /* Pods_SeeSky.framework */; };
 		232C51DC29F13BF9003143AD /* Celestial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C51DB29F13BF9003143AD /* Celestial.swift */; };
 		232C51E029F1464E003143AD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C51DF29F1464E003143AD /* FavoritesViewController.swift */; };
 		232C51E229F14D5A003143AD /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C51E129F14D5A003143AD /* FavTableViewCell.swift */; };
@@ -41,6 +42,9 @@
 		3037C43E29CC818A00CEFC73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3037C44129CC818A00CEFC73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3080C6FC29F41ED800271C7C /* Celestials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Celestials.json; sourceTree = "<group>"; };
+		3312D2FC800194EDE3017AA1 /* Pods-SeeSky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeSky.release.xcconfig"; path = "Target Support Files/Pods-SeeSky/Pods-SeeSky.release.xcconfig"; sourceTree = "<group>"; };
+		59457E985522C42B03CD5579 /* Pods_SeeSky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeeSky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8D3334A23B84781D6B90995 /* Pods-SeeSky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeSky.debug.xcconfig"; path = "Target Support Files/Pods-SeeSky/Pods-SeeSky.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8624857A93F21681D6EB94 /* Pods_SeeSky.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +101,8 @@
 			children = (
 				3037C43429CC818600CEFC73 /* SeeSky */,
 				3037C43329CC818600CEFC73 /* Products */,
+				6F4210CB502C7B46028EF803 /* Pods */,
+				5FD988D7598A6435DCE7F318 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +131,23 @@
 			path = SeeSky;
 			sourceTree = "<group>";
 		};
+		5FD988D7598A6435DCE7F318 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59457E985522C42B03CD5579 /* Pods_SeeSky.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F4210CB502C7B46028EF803 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8D3334A23B84781D6B90995 /* Pods-SeeSky.debug.xcconfig */,
+				3312D2FC800194EDE3017AA1 /* Pods-SeeSky.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3037C44529CC818A00CEFC73 /* Build configuration list for PBXNativeTarget "SeeSky" */;
 			buildPhases = (
+				93BED5C9BB02A4DFD7BD13BF /* [CP] Check Pods Manifest.lock */,
 				3037C42E29CC818600CEFC73 /* Sources */,
 				3037C42F29CC818600CEFC73 /* Frameworks */,
 				3037C43029CC818600CEFC73 /* Resources */,
+				62350A7C504F806CE31D905A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +216,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62350A7C504F806CE31D905A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SeeSky/Pods-SeeSky-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SeeSky/Pods-SeeSky-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SeeSky/Pods-SeeSky-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93BED5C9BB02A4DFD7BD13BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SeeSky-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3037C42E29CC818600CEFC73 /* Sources */ = {
@@ -348,6 +416,7 @@
 		};
 		3037C44629CC818A00CEFC73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8D3334A23B84781D6B90995 /* Pods-SeeSky.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -382,6 +451,7 @@
 		};
 		3037C44729CC818A00CEFC73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3312D2FC800194EDE3017AA1 /* Pods-SeeSky.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

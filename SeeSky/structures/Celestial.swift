@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 
 
@@ -87,7 +88,7 @@ class Celestial: Decodable, Hashable {
 }
 
 
-let categories = ["Constellations", "Planets", "Satellites", "Stars", "Galaxies", "Meteores", "Star System"]
+let categories = ["Constellations", "Planets", "Asteroids", "Stars", "Galaxies",  "Nebulas", "Satellites"]
 
 ///Function that retrieves Celestials with isFavorite flag ON
 func getFavorites() -> [Celestial] {
@@ -170,3 +171,22 @@ func getListType( _ type: String) -> [Celestial]{
     
     return result
 }
+
+///Function that collects all the first images of each category
+func getFirstElemCategories() -> [Celestial] {
+    var result : [Celestial] = []
+    
+    for cat in categories {
+        var temp = getListType(cat)
+        if !temp.isEmpty {
+            result.append(temp[0])
+        } else {
+            result.append(Celestial(name: "", type: "", average_distance_from_earth: "", mass: "", equatorial_radius: "", composition: "", orbital_period: "", average_orbital_speed: "", image: "https://solarsystem.nasa.gov/system/resources/detail_files/781_Moon.png", isFavorite: false, isOTD: false, desc: ""))
+        }
+        
+    }
+    
+    return result
+}
+
+

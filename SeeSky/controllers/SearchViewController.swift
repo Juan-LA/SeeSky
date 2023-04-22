@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var titlePage: UILabel!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
+    
     
     @IBOutlet weak var OTDSectionTitle: UILabel!
     
@@ -26,6 +32,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     var stars : [Celestial] = getListType("star")
     var galaxies : [Celestial] = getListType("galaxy")
     var nebulas : [Celestial] = getListType("nebula")
+    var satellites : [Celestial] = getListType("satellite")
     
     ///Elements OTD section
     var elemOTD : [Celestial] = getOTD()
@@ -35,11 +42,39 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titlePage.textColor = .white
+        
+        ///SearchBar
+        searchBar.backgroundColor = UIColor(white: 1, alpha: 1)
+        searchBar.placeholder = "Explore the Universe"
+        searchBar.isTranslucent = false
+        searchBar.barTintColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
+        searchBar.tintColor = .white
+
+//        searchBar.backgroundColor = UIColor.red
+        
+        ///OTD Section
+        OTDSectionTitle.textColor = .white
+        
         sectionOTD.delegate = self
         sectionOTD.dataSource = self
         
+        sectionOTD.backgroundView?.backgroundColor = .blue
+        sectionOTD.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
+        
+        ///Categories Section
+        CategoriesSectTitle.textColor = .white
+        
         sectionCategories.delegate = self
         sectionCategories.dataSource = self
+        
+        sectionCategories.backgroundView?.backgroundColor = .green
+        sectionCategories.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
+        sectionCategories.tableFooterView = nil
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
+        
+        
         
         
         // Do any additional setup after loading the view.
@@ -48,17 +83,24 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return elemOTD.count
+        return categories.count
     }
     
     
-    ///Function to create cell of collection
+    ///Function to create cell of collection OTD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         ///Cells for Section Of The Day
-        let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "cellOTD", for: indexPath) as! OTDCell
+        let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "OTDCell", for: indexPath) as! OTDCell
         
-        print(cell)
+        let firstElem = getFirstElemCategories()
+        
+        cell.name.text = categories[indexPath.row]
+        cell.name.textColor = .white
+        
+        cell.img.image = UIImage(systemName: "house.fill")
+        
+//        cell.img.kf.setImage(with: URL(string: firstElem[indexPath.row].image))
 //        
 //        cell.name.text = sectionOTD[indexPath.row]
         
@@ -69,14 +111,37 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         return categories.count
     }
     
+    ///Function to create cell of table Categories
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = sectionCategories.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCell
         
-        cell.name.text = categories[indexPath.row]
-        cell.img.image = UIImage(systemName: "house.fill")
+        let firstElem = getFirstElemCategories()
+        
+        ///Content
+        ///Hstack
+        cell.hStack.layer.cornerRadius = 16
+        cell.hStack.layer.borderWidth = 2
+        cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
+        cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
+        ///Text
+        cell.name.text = "\t\(categories[indexPath.row])"
+        cell.name.textColor = .white
+        ///View with image inside
+        cell.spaceForImg.layer.cornerRadius = 16
+        cell.spaceForImg.backgroundColor = .clear
+        ///Img
+        cell.img.kf.setImage(with: URL(string: firstElem[indexPath.row].image))
+        cell.img.layer.cornerRadius = 16
+        cell.backgroundColor = .clear
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120 // altezza della cella
+    }
+
+    
         
         
         
