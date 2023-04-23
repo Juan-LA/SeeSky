@@ -27,6 +27,7 @@
 		3080C71529F54D4700271C7C /* Figtree-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3080C71329F54D4700271C7C /* Figtree-SemiBold.ttf */; };
 		3080C71729F5622100271C7C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080C71629F5622100271C7C /* CategoryViewController.swift */; };
 		3080C71929F5629F00271C7C /* ElemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080C71829F5629F00271C7C /* ElemTableViewCell.swift */; };
+		3080C71B29F5885000271C7C /* InfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080C71A29F5885000271C7C /* InfoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		3080C71329F54D4700271C7C /* Figtree-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-SemiBold.ttf"; sourceTree = "<group>"; };
 		3080C71629F5622100271C7C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		3080C71829F5629F00271C7C /* ElemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElemTableViewCell.swift; sourceTree = "<group>"; };
+		3080C71A29F5885000271C7C /* InfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		3312D2FC800194EDE3017AA1 /* Pods-SeeSky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeSky.release.xcconfig"; path = "Target Support Files/Pods-SeeSky/Pods-SeeSky.release.xcconfig"; sourceTree = "<group>"; };
 		59457E985522C42B03CD5579 /* Pods_SeeSky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeeSky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D3334A23B84781D6B90995 /* Pods-SeeSky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeSky.debug.xcconfig"; path = "Target Support Files/Pods-SeeSky/Pods-SeeSky.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				23EFD86D29D387B50080E687 /* OTDCell.swift */,
 				232C51E129F14D5A003143AD /* FavTableViewCell.swift */,
 				3080C71829F5629F00271C7C /* ElemTableViewCell.swift */,
+				3080C71A29F5885000271C7C /* InfoCollectionViewCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			files = (
 				23EFD83C29D02BEC0080E687 /* data.swift in Sources */,
 				23EFD86A29D2DB560080E687 /* CategoryCell.swift in Sources */,
+				3080C71B29F5885000271C7C /* InfoCollectionViewCell.swift in Sources */,
 				232C51DC29F13BF9003143AD /* Celestial.swift in Sources */,
 				23EFD86E29D387B50080E687 /* OTDCell.swift in Sources */,
 				3080C71729F5622100271C7C /* CategoryViewController.swift in Sources */,

@@ -87,6 +87,7 @@ class Celestial: Decodable, Hashable {
     
 }
 
+let defaultCelestial = Celestial(name: "", type: "", average_distance_from_earth: "", mass: "", equatorial_radius: "", composition: "", orbital_period: "", average_orbital_speed: "", image: "", isFavorite: false, isOTD: false, desc: "")
 
 let categories = ["Constellations", "Planets", "Asteroids", "Stars", "Galaxies",  "Nebulas", "Satellites"]
 
@@ -189,4 +190,17 @@ func getFirstElemCategories() -> [Celestial] {
     return result
 }
 
+///Function to retrieve additional info
+func getInfo(_ celestial: Celestial) -> [String] {
+    var result : [String] = []
+    
+    result.append(celestial.average_distance_from_sun)
+    result.append(celestial.mass)
+    result.append(celestial.equatorial_radius)
+    result.append(celestial.composition)
+    result.append(celestial.orbital_period)
+    result.append(celestial.average_orbital_speed)
+    
+    return result
+}
 

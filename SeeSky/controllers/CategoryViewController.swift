@@ -18,6 +18,8 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     var selectedCategory : String = ""
     
     var elemCategory : [Celestial] = []
+    
+    var selectedCelestial : Celestial = defaultCelestial
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,5 +84,25 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "celestial"){
+            
+            guard let celVC = segue.destination as? CelestialViewController else {return}
+            
+            celVC.selectedCelestial = selectedCelestial
+            
+            }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedCelestial = elemCategory[indexPath.row]
+        
+        performSegue(withIdentifier: "celestial", sender: nil)
+    }
+    
 
 }
