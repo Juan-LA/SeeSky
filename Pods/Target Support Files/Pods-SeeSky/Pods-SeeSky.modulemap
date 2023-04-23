@@ -1,0 +1,6 @@
+framework module Pods_SeeSky {
+  umbrella header "Pods-SeeSky-umbrella.h"
+
+  export *
+  module * { export * }
+}
