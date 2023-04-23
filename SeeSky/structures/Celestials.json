@@ -9,8 +9,8 @@
   "orbital_period": "27.3 days",
   "average_orbital_speed": "1,022 km/h",
   "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Full_moon.png",
-  "isFavorite": false,
-  "isOTD" : false,
+  "isFavorite": true,
+  "isOTD" : true,
   "desc": ""
 },
 {
@@ -22,7 +22,7 @@
   "composition": "rock, water, gas",
   "orbital_period": "365.25 days",
   "average_orbital_speed": "107,200 km/h",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/823_PIA22076.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/2/22/Earth_Western_Hemisphere_transparent_background.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -37,7 +37,7 @@
   "composition": "rock, ice, iron",
   "orbital_period": "687 days",
   "average_orbital_speed": "24.077 km/s",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/780_Mars.png",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Mars_transparent.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -52,8 +52,8 @@
   "composition": "rock, metal",
   "orbital_period": "224.7 days",
   "average_orbital_speed": "126,000 km/h",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/785_PIA00257.jpg",
-  "isFavorite": false,
+  "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/Venus_globe_-_transparent_background.png",
+  "isFavorite": true,
   "isOTD" : false,
   "desc": ""
 
@@ -67,7 +67,7 @@
   "composition": "gas, primarily hydrogen and helium",
   "orbital_period": "11.9 years",
   "average_orbital_speed": "47,000 km/h",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2440_PIA23623.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Jupiter_%28transparent%29.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -82,7 +82,7 @@
   "composition": "gas, primarily hydrogen and helium",
   "orbital_period": "29.5 years",
   "average_orbital_speed": "34,500 km/h",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2488_PIA17200.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/Saturnx.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -97,7 +97,7 @@
   "composition": "gas, primarily hydrogen and helium",
   "orbital_period": "84 years",
   "average_orbital_speed": "24,477 km/h",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2547_PIA18182.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/3/32/3D_Uranus.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -112,7 +112,7 @@
   "composition": "gas, primarily hydrogen and helium",
   "orbital_period": "164.8 years",
   "average_orbital_speed": "19,566 km/h",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2550_PIA01492.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/3D_Neptune.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -127,7 +127,7 @@
   "composition": "rock, ice",
   "orbital_period": "248 years",
   "average_orbital_speed": "4,740 km/h",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/112_Pluto_Face_07_15_15.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Pluto-transparent.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -142,7 +142,7 @@
   "composition": "rock, ice",
   "orbital_period": "4.6 years",
   "average_orbital_speed": "64,728 km/h",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/791_ceres.png",
+  "image": "https://stsci-opo.org/STScI-01EVSTFG11Z011TWQSTZ4ASBBW.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -157,7 +157,7 @@
   "composition": "gas, primarily hydrogen and helium",
   "orbital_period": "NaN",
   "average_orbital_speed": "NaN",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/162_Sun.png",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Red_Hot_Sun.PNG",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -172,7 +172,7 @@
   "composition": "gas, primarily hydrogen and helium",
   "orbital_period": "NaN",
   "average_orbital_speed": "NaN",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/841_alpha_centauri_01.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Alpha-centauri-AB.png/1230px-Alpha-centauri-AB.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -187,7 +187,7 @@
   "composition": "gas, primarily hydrogen and helium",
   "orbital_period": "NaN",
   "average_orbital_speed": "NaN",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/847_Betelgeuse.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Betelgeuse.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -202,7 +202,7 @@
   "composition": "gas, dust, and stars",
   "orbital_period": "NaN",
   "average_orbital_speed": "NaN",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/883_1_m31_4k.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Andromeda_galaxy.png/1200px-Andromeda_galaxy.png?20200923184517",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -217,7 +217,7 @@
   "composition": "gas, dust, and stars",
   "orbital_period": "NaN",
   "average_orbital_speed": "NaN",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/888_Whirlpool_Galaxy.jpg",
+  "image": "https://stsci-opo.org/STScI-01EVT857Z8Y9VDQAY56MQGJH2M.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -232,7 +232,7 @@
   "composition": "gas and dust",
   "orbital_period": "NaN",
   "average_orbital_speed": "NaN",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/980_orion_hires.jpg",
+  "image": "https://stsci-opo.org/STScI-01EVT7WK0WCVNRN91GD8SA299X.png",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""
@@ -247,7 +247,7 @@
   "composition": "rock and metal",
   "orbital_period": "436.6 days",
   "average_orbital_speed": "101,000 km/h",
-  "image": "https://solarsystem.nasa.gov/system/resources/detail_files/2516_PIA23114-web.jpg",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bennu_at_300_pixels.png?20181123200404",
   "isFavorite": false,
   "isOTD" : false,
   "desc": ""

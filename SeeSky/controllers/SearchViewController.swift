@@ -37,6 +37,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     ///Elements OTD section
     var elemOTD : [Celestial] = getOTD()
     
+    var selectedCategory : String = ""
     
     
     override func viewDidLoad() {
@@ -114,11 +115,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
         cell.hStack.layer.borderWidth = 2
         cell.hStack.layer.backgroundColor =  CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1)
-        
-//        cell.img.kf.setImage(with: URL(string: firstElem[indexPath.row].image))
-//        
-//        cell.name.text = sectionOTD[indexPath.row]
-        
+       
         return cell
     }
     
@@ -173,5 +170,50 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
          }
          */
         
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "category"){
+            
+            guard let catVC = segue.destination as? CategoryViewController else {return}
+            
+            catVC.selectedCategory = selectedCategory
+            
+            
+            }
+        }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+        
+        selectedCategory = categories[sectionCategories.indexPathForSelectedRow?.row ?? 0]
+        
+        performSegue(withIdentifier: "category", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let deselectedCell = tableView.cellForRow(at: indexPath)
+        deselectedCell?.backgroundColor = .clear
+        
+        tableView.backgroundView?.backgroundColor = .clear
+        tableView.backgroundColor = .clear
+    }
+    
+    ///To make navigation item disappear
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    ///To make navigation item appear in other views
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     
 }
