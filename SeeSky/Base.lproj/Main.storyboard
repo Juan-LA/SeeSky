@@ -421,7 +421,7 @@
                                     <outlet property="delegate" destination="cGX-OY-PJB" id="fqv-zj-mLM"/>
                                 </connections>
                             </searchBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcF-v9-4XZ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="scrollableAxes" translatesAutoresizingMaskIntoConstraints="NO" id="CcF-v9-4XZ">
                                 <rect key="frame" x="0.0" y="201" width="414" height="965"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wP1-X3-oTK">
@@ -757,6 +757,7 @@
                     <connections>
                         <outlet property="CategoriesSectTitle" destination="I7y-pd-aNf" id="dL8-ub-8DJ"/>
                         <outlet property="OTDSectionTitle" destination="RL6-iP-s9g" id="1rR-j7-F7d"/>
+                        <outlet property="scroll" destination="CcF-v9-4XZ" id="FVp-r9-8dZ"/>
                         <outlet property="searchBar" destination="IVX-B1-QAy" id="Erd-ia-uTi"/>
                         <outlet property="sectionCategories" destination="XbH-ee-ouM" id="uja-Tt-ejh"/>
                         <outlet property="sectionOTD" destination="kyl-hv-Hlt" id="hxp-mJ-L7c"/>

@@ -27,9 +27,6 @@
                             <constraint firstItem="NX6-fF-dmm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ueR-yA-yEe"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="img" destination="NX6-fF-dmm" id="nTh-Ap-dJm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

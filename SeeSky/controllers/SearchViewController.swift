@@ -14,6 +14,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var scroll: UIScrollView!
     
     
     
@@ -78,11 +79,17 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         
         
-        
+        scroll.isScrollEnabled = true
         
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let totalHeight = OTDSectionTitle.frame.height + sectionOTD.frame.height + CategoriesSectTitle.frame.height + sectionCategories.contentSize.height
+        
+        scroll.contentSize = CGSize(width: view.frame.width, height: totalHeight)
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
