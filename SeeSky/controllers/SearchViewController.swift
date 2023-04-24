@@ -76,7 +76,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         sectionCategories.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
         sectionCategories.tableFooterView = nil
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
+//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         
         
         scroll.isScrollEnabled = true
