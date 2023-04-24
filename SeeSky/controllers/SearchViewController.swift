@@ -24,6 +24,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var sectionOTD: UICollectionView!
     
+    let emptyCellHeight: CGFloat = 50.0
+    var emptyCell: UITableViewCell?
+    
     @IBOutlet weak var sectionCategories: UITableView!
     
     ///Data
@@ -127,45 +130,60 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return categories.count + 1
     }
     
     ///Function to create cell of table Categories
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = sectionCategories.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCell
+
+        if indexPath.row == categories.count {
+            print("sei entrato")
+            emptyCell = UITableViewCell(style: .default, reuseIdentifier: nil)
+            emptyCell?.backgroundColor = .clear
+            emptyCell?.isUserInteractionEnabled = false
+            emptyCell?.selectionStyle = .none
+            
+            return emptyCell!
+        }
+        else {
+            let cell = sectionCategories.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCell
+            
+            let firstElem = getFirstElemCategories()
+            
+            ///Content
+            ///Hstack
+            cell.hStack.layer.cornerRadius = 16
+            cell.hStack.layer.borderWidth = 2
+            cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
+            cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
+            ///Text
+            cell.name.text = "\t\(categories[indexPath.row])"
+            cell.name.textColor = .white
+            ///View with image inside
+            cell.spaceForImg.layer.cornerRadius = 16
+            cell.spaceForImg.backgroundColor = .clear
+            ///Img
+            cell.img.kf.setImage(with: URL(string: firstElem[indexPath.row].image))
+            cell.img.layer.cornerRadius = 16
+            cell.backgroundColor = .clear
+            print(indexPath.row)
+            print(categories.count)
+            
+    //        if (indexPath.row == categories.count-1) {
+    //            let bottomInset = CGFloat(100) // altezza dello spazio vuoto che vuoi aggiungere
+    //            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+    //
+    //
+    //        }
+    //
+            return cell
+        }
         
-        let firstElem = getFirstElemCategories()
-        
-        ///Content
-        ///Hstack
-        cell.hStack.layer.cornerRadius = 16
-        cell.hStack.layer.borderWidth = 2
-        cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
-        cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
-        ///Text
-        cell.name.text = "\t\(categories[indexPath.row])"
-        cell.name.textColor = .white
-        ///View with image inside
-        cell.spaceForImg.layer.cornerRadius = 16
-        cell.spaceForImg.backgroundColor = .clear
-        ///Img
-        cell.img.kf.setImage(with: URL(string: firstElem[indexPath.row].image))
-        cell.img.layer.cornerRadius = 16
-        cell.backgroundColor = .clear
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120 // altezza della cella
     }
-
-    
-        
-        
-        
-        
-        
         
         /*
          // MARK: - Navigation
