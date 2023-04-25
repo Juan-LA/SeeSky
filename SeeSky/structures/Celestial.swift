@@ -197,19 +197,6 @@ let celestials = getBodies()
 //    return result
 //}
 
-/////Function to retrieve additional info
-//func getInfo(_ celestial: Celestial) -> [String] {
-//    var result : [String] = []
-//
-//    result.append(String(celestial.aphelion))
-////    result.append(celestial.mass)
-////    result.append(celestial.equatorial_radius)
-////    result.append(celestial.composition)
-////    result.append(celestial.orbital_period)
-////    result.append(celestial.average_orbital_speed)
-//
-//    return result
-//}
 
 
 ///Retrieve data by specific category
@@ -220,6 +207,10 @@ func getBodiesByCategory(_ list: [Celestial], _ category: String) -> [Celestial]
         if elem.bodyType.uppercased() == category.uppercased(){
             result.append(elem)
         }
+    }
+    
+    for elem in result{
+        print(elem.englishName)
     }
    
     
@@ -273,6 +264,8 @@ func getImgCat() -> [String]{
     return result
 }
 
+
+///Function to retrieve 3 different elements to show inside the OTD section
 func get3ElemRandom(_ list: [Celestial]) -> [Celestial]{
     var result : [Celestial] = []
     var temp : Celestial
