@@ -24,24 +24,22 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var sectionOTD: UICollectionView!
     
-    let emptyCellHeight: CGFloat = 50.0
-    var emptyCell: UITableViewCell?
-    
     @IBOutlet weak var sectionCategories: UITableView!
     
-    ///Data
-    var constellations : [Celestial] = getListType("constellation")
-    var planets : [Celestial] = getListType("planet")
-    var asteroids : [Celestial] = getListType("asteroid")
-    var stars : [Celestial] = getListType("star")
-    var galaxies : [Celestial] = getListType("galaxy")
-    var nebulas : [Celestial] = getListType("nebula")
-    var satellites : [Celestial] = getListType("satellite")
-    
+//    ///Data
+//    var constellations : [Celestial] = getListType("constellation")
+//    var planets : [Celestial] = getListType("planet")
+//    var asteroids : [Celestial] = getListType("asteroid")
+//    var stars : [Celestial] = getListType("star")
+//    var galaxies : [Celestial] = getListType("galaxy")
+//    var nebulas : [Celestial] = getListType("nebula")
+//    var satellites : [Celestial] = getListType("satellite")
+//
     ///Elements OTD section
-    var elemOTD : [Celestial] = getOTD()
+//    var elemOTD : [Celestial] = getOTD()
     
     var selectedCategory : String = ""
+    
     
     
     override func viewDidLoad() {
@@ -50,11 +48,12 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         titlePage.textColor = .white
         
         ///SearchBar
-        searchBar.backgroundColor = UIColor(white: 1, alpha: 1)
+        searchBar.backgroundColor = .clear
         searchBar.placeholder = "Explore the Universe"
         searchBar.isTranslucent = false
-        searchBar.barTintColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
+        searchBar.barTintColor = .clear
         searchBar.tintColor = .white
+        
 
 //        searchBar.backgroundColor = UIColor.red
         
@@ -106,9 +105,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         ///Cells for Section Of The Day
         let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "OTDCell", for: indexPath) as! OTDCell
         
-        let firstElem = getFirstElemCategories()
+//        let firstElem = getAllCelestial()
         
-        cell.name.text = categories[indexPath.row]
+        cell.name.text = "ciao"
+//        firstElem[indexPath.row].name
         cell.name.textColor = .white
         
         cell.img.image = UIImage(systemName: "house.fill")
@@ -135,55 +135,77 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     ///Function to create cell of table Categories
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        if indexPath.row == categories.count {
-            print("sei entrato")
-            emptyCell = UITableViewCell(style: .default, reuseIdentifier: nil)
-            emptyCell?.backgroundColor = .clear
-            emptyCell?.isUserInteractionEnabled = false
-            emptyCell?.selectionStyle = .none
+        if indexPath.row == categories.count{
+            let cell = UITableViewCell()
+            cell.backgroundColor = .clear
             
-            return emptyCell!
-        }
-        else {
+            return cell
+        } else {
             let cell = sectionCategories.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCell
             
-            let firstElem = getFirstElemCategories()
+            
+            
+            var result = getBodies()
+            var imgUrls = getImgCat()
+            
+            
+            
+            
+            
+            
+            
             
             ///Content
             ///Hstack
             cell.hStack.layer.cornerRadius = 16
-            cell.hStack.layer.borderWidth = 2
-            cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
+            
+            
             cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
             ///Text
+            ///\(firstElem[indexPath.row].name
+            
             cell.name.text = "\t\(categories[indexPath.row])"
+            cell.hStack.layer.borderWidth = 2
+            cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
+            cell.img.kf.setImage(with: URL(string: imgUrls[indexPath.row]))
+            
+            
             cell.name.textColor = .white
             ///View with image inside
             cell.spaceForImg.layer.cornerRadius = 16
             cell.spaceForImg.backgroundColor = .clear
             ///Img
-            cell.img.kf.setImage(with: URL(string: firstElem[indexPath.row].image))
+            
             cell.img.layer.cornerRadius = 16
             cell.backgroundColor = .clear
-            print(indexPath.row)
-            print(categories.count)
             
-    //        if (indexPath.row == categories.count-1) {
-    //            let bottomInset = CGFloat(100) // altezza dello spazio vuoto che vuoi aggiungere
-    //            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
-    //
-    //
-    //        }
-    //
             return cell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120 // altezza della cella
+        if indexPath.row == categories.count{
+            return 40
+        } else {
+            return 120 // altezza della cella
+        }
+        
     }
+
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.row == categories.count{
+            return nil
+        } else {
+            return indexPath
+            
+        }
+    }
+    
+        
+        
+        
+        
+        
         
         /*
          // MARK: - Navigation

@@ -32,7 +32,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         ///Table
         tableCatElem.backgroundColor = .clear
         
-        elemCategory = getListType(selectedCategory)
+//        elemCategory = getListType(selectedCategory)
         
         categoryName.text = selectedCategory
         
@@ -60,15 +60,15 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
         cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
         ///Text
-        cell.name.text = "\t\(elemCategory[indexPath.row].name)"
+//        cell.name.text = "\t\(elemCategory[indexPath.row].name)"
         cell.name.textColor = .white
         
         ///Button Star
-        if elemCategory[indexPath.row].isFavorite {
-            cell.btn.setImage(UIImage(systemName: "star.fill")?.withTintColor(.white), for: .normal)
-        } else {
+//        if elemCategory[indexPath.row].isFavorite {
+//            cell.btn.setImage(UIImage(systemName: "star.fill")?.withTintColor(.white), for: .normal)
+//        } else {
             cell.btn.setImage(UIImage(systemName: "star")?.withTintColor(.white), for: .normal)
-        }
+//        }
         return cell
     }
     

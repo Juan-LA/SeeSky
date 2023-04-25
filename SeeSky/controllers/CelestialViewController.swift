@@ -45,28 +45,28 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         
         ///Is OTD?
         OTDLbl.textColor = .systemIndigo
-        if selectedCelestial.isOTD{
-            OTDLbl.text = "\(selectedCelestial.type) of the Day"
-        } else {
+//        if selectedCelestial.isOTD{
+//            OTDLbl.text = "\(selectedCelestial.type) of the Day"
+//        } else {
             OTDLbl.isHidden = true
-        }
+//        }
         
         ///Celestial's name
         celestialLbl.textColor = .white
-        celestialLbl.text = selectedCelestial.name
+//        celestialLbl.text = selectedCelestial.name
         
         ///Celestial Image
-        celestialImg.kf.setImage(with: URL(string: selectedCelestial.image))
+//        celestialImg.kf.setImage(with: URL(string: selectedCelestial.image))
         celestialImg.layer.cornerRadius = 16
         
         ///Info
-        info = getInfo(selectedCelestial)
+//        info = getInfo(selectedCelestial)
         infoColl.dataSource = self
         infoColl.delegate = self
         
         ///Description section
         desc.textColor = .white
-        desc.text = selectedCelestial.desc
+//        desc.text = selectedCelestial.desc
         
         updateUI()
 
@@ -74,9 +74,9 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func updateUI() {
-        celestialLbl.text = selectedCelestial.name
+//        celestialLbl.text = selectedCelestial.name
 //        celestialImg.image = planetOfDay.image
-        desc.text = selectedCelestial.desc
+//        desc.text = selectedCelestial.desc
 //        details.text = planetOfDay.technical
         
     }

@@ -14,7 +14,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableFavorite: UITableView!
     
-    var fav = getFavorites()
+//    var fav = getFavorites()
     
 
     override func viewDidLoad() {
@@ -32,13 +32,14 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fav.count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableFavorite.dequeueReusableCell(withIdentifier: "cellFav") as! FavTableViewCell
         
-        cell.name.text = fav[indexPath.row].name
+        cell.name.text = "Prova"
+        //fav[indexPath.row].name
         
         return cell
     }

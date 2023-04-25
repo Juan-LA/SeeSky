@@ -9,198 +9,268 @@ import Foundation
 import UIKit
 import Kingfisher
 
-
+///Class for test purposes
+//class IDS : Decodable {
+//    var id: String
+//    var englishName: String
+//
+//    init(id: String, englishName: String) {
+//        self.id = id
+//        self.englishName = englishName
+//    }
+//
+//    enum CodingKeys: String, CodingKey
+//    {
+//        case id
+//        case englishName
+//    }
+//}
 
 
 class Celestial: Decodable, Hashable {
+
+    var id: String
+    var englishName: String
+    var aphelion: Int
+    var gravity: Double
+    var equaRadius: Double
+    var bodyType: String
     
-    var name: String
-    ///Technical data
-    var type: String
-    var average_distance_from_sun: String
-    var mass: String
-    var equatorial_radius: String
-    var composition: String
-    var orbital_period: String
-    var average_orbital_speed: String
-    
-    var image: String
-    var isFavorite: Bool
-    var isOTD : Bool
-    
-    var desc: String
-    
-    init(name: String, type:String, average_distance_from_earth: String, mass: String, equatorial_radius: String, composition: String, orbital_period: String, average_orbital_speed: String, image: String, isFavorite: Bool, isOTD: Bool, desc: String) {
-        self.name = name
-        self.type = type
-        self.average_distance_from_sun = average_distance_from_earth
-        self.mass = mass
-        self.equatorial_radius = equatorial_radius
-        self.composition = composition
-        self.orbital_period = orbital_period
-        self.average_orbital_speed = average_orbital_speed
-        self.image = image
-        self.isFavorite = isFavorite
-        self.isOTD = isOTD
-        self.desc = desc
+    init(id: String, name: String, maxDistFromSun: Int, gravity: Double, equaRadius: Double, bodyType: String) {
+        self.id = id
+        self.englishName = name
+        self.aphelion = maxDistFromSun
+        self.gravity = gravity
+        self.equaRadius = equaRadius
+        self.bodyType = bodyType
     }
     
+    
+    
+    
+
     enum CodingKeays: String, CodingKey{
+
+        case id
+        case englishName
+        case aphelion
+        case gravity
+        case equaRadius
+        case bodyType
         
-        case name
-        case type
-        case average_distance_from_earth
-        case mass
-        case equatorial_radius
-        case composition
-        case orbital_period
-        case average_orbital_speed
-        case image
-        case isFavorite
-        case isOTD
-        case desc
+        
     }
-    
+
     func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+        hasher.combine(englishName)
     }
-    
+
     static func == (lhs: Celestial, rhs: Celestial) -> Bool {
-        if lhs.name == rhs.name &&
-            lhs.type == rhs.type &&
-            lhs.average_distance_from_sun == rhs.average_distance_from_sun &&
-            lhs.mass == rhs.mass &&
-            lhs.equatorial_radius == rhs.equatorial_radius &&
-            lhs.composition == rhs.composition &&
-            lhs.orbital_period == rhs.orbital_period &&
-            lhs.average_orbital_speed == rhs.average_orbital_speed &&
-            lhs.image == rhs.image &&
-            lhs.isFavorite == rhs.isFavorite &&
-            lhs.isOTD == rhs.isOTD &&
-            lhs.desc == rhs.desc
+        if lhs.id == rhs.id &&
+            lhs.englishName == rhs.englishName &&
+            lhs.aphelion == rhs.aphelion &&
+            lhs.gravity == rhs.gravity &&
+            lhs.equaRadius == rhs.equaRadius &&
+            lhs.bodyType == rhs.bodyType
         {
             return true
         } else {
             return false
         }
     }
-    
+
 }
+let defaultCelestial = Celestial(id: "", name: "", maxDistFromSun: 0, gravity: 0.0, equaRadius: 0, bodyType: "")
 
-let defaultCelestial = Celestial(name: "", type: "", average_distance_from_earth: "", mass: "", equatorial_radius: "", composition: "", orbital_period: "", average_orbital_speed: "", image: "", isFavorite: false, isOTD: false, desc: "")
-
-let categories = ["Constellations", "Planets", "Asteroids", "Stars", "Galaxies",  "Nebulas", "Satellites"]
+let categories = ["Star", "Planet" , "Dwarf Planet", "Asteroid", "Comet", "Moon"]
 
 ///Function that retrieves Celestials with isFavorite flag ON
-func getFavorites() -> [Celestial] {
-    
-    
-    var result : [Celestial] = []
-    var decoded : [Celestial] = []
-    
-    guard let url = Bundle.main.url(forResource: "Celestials", withExtension: "json") else {
-        fatalError("File not found")
-    }
-    
-    //reads data
-    let data = try! Data(contentsOf: url)
-    let decoder = JSONDecoder()
-    decoded = try! decoder.decode([Celestial].self, from: data)
-    
-    
-    for i in decoded {
-        if i.isFavorite {
-            result.append(i)
-        }
-    }
-    
-    
-    return result
-    
-}
+//func getFavorites() -> [Celestial] {
+//
+//
+//    var result : [Celestial] = []
+//    var decoded : [Celestial] = []
+//
+//    guard let url = Bundle.main.url(forResource: "Celestials", withExtension: "json") else {
+//        fatalError("File not found")
+//    }
+//
+//    //reads data
+//    let data = try! Data(contentsOf: url)
+//    let decoder = JSONDecoder()
+//    decoded = try! decoder.decode([Celestial].self, from: data)
+//
+//
+//    for i in decoded {
+//        if i.isFavorite {
+//            result.append(i)
+//        }
+//    }
+//
+//
+//    return result
+//
+//}
 
 ///Function that collects all Celestial that are inside the OTD section
-func getOTD() -> [Celestial] {
-    
-    
-    var result : [Celestial] = []
-    var decoded : [Celestial] = []
-    
-    guard let url = Bundle.main.url(forResource: "Celestials", withExtension: "json") else {
-        fatalError("File not found")
-    }
-    
-    //reads data
-    let data = try! Data(contentsOf: url)
-    let decoder = JSONDecoder()
-    decoded = try! decoder.decode([Celestial].self, from: data)
-    
-    
-    for i in decoded {
-        if i.isOTD {
-            result.append(i)
-        }
-    }
-    
-    
-    return result
-    
-}
+//func getOTD() -> [Celestial] {
+//
+//
+//    var result : [Celestial] = []
+//    var decoded : [Celestial] = []
+//
+//    guard let url = Bundle.main.url(forResource: "Celestials", withExtension: "json") else {
+//        fatalError("File not found")
+//    }
+//
+//    //reads data
+//    let data = try! Data(contentsOf: url)
+//    let decoder = JSONDecoder()
+//    decoded = try! decoder.decode([Celestial].self, from: data)
+//
+//
+//    for i in decoded {
+//        if i.isOTD {
+//            result.append(i)
+//        }
+//    }
+//
+//
+//    return result
+//
+//}
+
+///Function to retrieve all Celestials
+//func getAllCelestial() -> [Celestial]{
+//
+//
+//
+//
+//    return result
+//}
 
 
 ///Function to retrieve data according to type of Celestial
-func getListType( _ type: String) -> [Celestial]{
-    
-    var result : [Celestial] = []
-    var decoded : [Celestial] = []
-    
-    guard let url = Bundle.main.url(forResource: "Celestials", withExtension: "json") else {
-        fatalError("File not found")
-    }
-    
-    //reads data
-    let data = try! Data(contentsOf: url)
-    let decoder = JSONDecoder()
-    decoded = try! decoder.decode([Celestial].self, from: data)
-    
-    
-    for i in decoded {
-        if type.uppercased().contains(i.type.uppercased()) {
-            result.append(i)
-        }
-    }
-    
-    return result
-}
+//func getListType( _ type: String) -> [Celestial]{
+//
+//    var result : [Celestial] = []
+//    var decoded : [Celestial] = []
+//
+//    guard let url = Bundle.main.url(forResource: "Celestials", withExtension: "json") else {
+//        fatalError("File not found")
+//    }
+//
+//    //reads data
+//    let data = try! Data(contentsOf: url)
+//    let decoder = JSONDecoder()
+//    decoded = try! decoder.decode([Celestial].self, from: data)
+//
+//
+//    for i in decoded {
+//        if type.uppercased().contains(i.type.uppercased()) {
+//            result.append(i)
+//        }
+//    }
+//
+//    return result
+//}
 
-///Function that collects all the first images of each category
-func getFirstElemCategories() -> [Celestial] {
+/////Function that collects all the first images of each category
+//func getFirstElemCategories() -> [Celestial] {
+//    var result : [Celestial] = []
+//
+//    for cat in categories {
+//        var temp = getListType(cat)
+//        if !temp.isEmpty {
+//            result.append(temp[0])
+//        } else {
+//            result.append(Celestial(id: <#T##String#>, name: <#T##String#>, moons: <#T##[String]#>, maxDistFromSun: <#T##Int#>, mass: <#T##Mass#>, vol: <#T##Volume#>, gravity: <#T##Double#>, equaRadius: <#T##Int#>, type: <#T##String#>))
+//        }
+//
+//    }
+//
+//    return result
+//}
+
+/////Function to retrieve additional info
+//func getInfo(_ celestial: Celestial) -> [String] {
+//    var result : [String] = []
+//
+//    result.append(String(celestial.aphelion))
+////    result.append(celestial.mass)
+////    result.append(celestial.equatorial_radius)
+////    result.append(celestial.composition)
+////    result.append(celestial.orbital_period)
+////    result.append(celestial.average_orbital_speed)
+//
+//    return result
+//}
+
+
+
+
+func getBodies() -> [Celestial]{
+    
     var result : [Celestial] = []
     
-    for cat in categories {
-        var temp = getListType(cat)
-        if !temp.isEmpty {
-            result.append(temp[0])
-        } else {
-            result.append(Celestial(name: "", type: "", average_distance_from_earth: "", mass: "", equatorial_radius: "", composition: "", orbital_period: "", average_orbital_speed: "", image: "https://solarsystem.nasa.gov/system/resources/detail_files/781_Moon.png", isFavorite: false, isOTD: false, desc: ""))
-        }
+    guard let url = URL(string: "https://api.le-systeme-solaire.net/rest/bodies") else{
+        return result
+    }
+    
+    let task = URLSession.shared.dataTask(with: url){
+        data, response, error in
         
+        let decoder = JSONDecoder()
+        
+        if let data = data {
+            do{
+                let tasks = try decoder.decode([String:[Celestial]].self, from: data)
+                
+                let values = tasks.values
+                
+                result = tasks["bodies"]!
+                
+//                values.forEach{ i in
+//                    i.forEach{
+//                        elem in
+//                        print ("\(elem.id)\t\(elem.englishName)\t\(elem.bodyType)")
+//                    }
+//                }
+                
+                result.forEach{
+                    i in print(i.englishName)
+                }
+                
+                
+            }catch{
+                print(error)
+            }
+            
+        }
     }
     
+    task.resume()
     return result
 }
 
-///Function to retrieve additional info
-func getInfo(_ celestial: Celestial) -> [String] {
+///function to get images categories
+func getImgCat() -> [String]{
     var result : [String] = []
     
-    result.append(celestial.average_distance_from_sun)
-    result.append(celestial.mass)
-    result.append(celestial.equatorial_radius)
-    result.append(celestial.composition)
-    result.append(celestial.orbital_period)
-    result.append(celestial.average_orbital_speed)
+    guard let url = Bundle.main.url(forResource: "ListImgUrl", withExtension: "json") else {
+        fatalError("File JSON non trovato")
+    }
+
+    do {
+        let data = try Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        let object = try decoder.decode([String].self, from: data)
+        // Usa l'oggetto "object" come desideri
+        print(object)
+        result = object
+    } catch {
+        print("Errore nella lettura del file JSON: \(error.localizedDescription)")
+    }
     
     return result
 }
-
