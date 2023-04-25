@@ -51,6 +51,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         titlePage.textColor = .white
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         self.navigationController?.navigationBar.tintColor = .white
+        
+        self.tabBarController?.tabBar.tintColor = .white
+        
 //        let appearance = UINavigationBarAppearance()
 ////                                appearance.configureWithOpaqueBackground()
 //                                self.navigationController?.navigationBar.isTranslucent = false  // pass "true" for fixing iOS 15.0 black bg issue

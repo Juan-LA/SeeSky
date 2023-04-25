@@ -30,6 +30,8 @@
 		3080C71B29F5885000271C7C /* InfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080C71A29F5885000271C7C /* InfoCollectionViewCell.swift */; };
 		3080C72429F754BA00271C7C /* ListImgUrl.json in Resources */ = {isa = PBXBuildFile; fileRef = 3080C72329F754BA00271C7C /* ListImgUrl.json */; };
 		3080C72629F82FE900271C7C /* ListBodies.json in Resources */ = {isa = PBXBuildFile; fileRef = 3080C72529F82FE900271C7C /* ListBodies.json */; };
+		3080C72829F8777F00271C7C /* ListFav.json in Resources */ = {isa = PBXBuildFile; fileRef = 3080C72729F8777F00271C7C /* ListFav.json */; };
+		3080C72A29F8856200271C7C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080C72929F8856200271C7C /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		3080C71A29F5885000271C7C /* InfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		3080C72329F754BA00271C7C /* ListImgUrl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListImgUrl.json; sourceTree = "<group>"; };
 		3080C72529F82FE900271C7C /* ListBodies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListBodies.json; sourceTree = "<group>"; };
+		3080C72729F8777F00271C7C /* ListFav.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListFav.json; sourceTree = "<group>"; };
+		3080C72929F8856200271C7C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3312D2FC800194EDE3017AA1 /* Pods-SeeSky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeSky.release.xcconfig"; path = "Target Support Files/Pods-SeeSky/Pods-SeeSky.release.xcconfig"; sourceTree = "<group>"; };
 		59457E985522C42B03CD5579 /* Pods_SeeSky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeeSky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D3334A23B84781D6B90995 /* Pods-SeeSky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeSky.debug.xcconfig"; path = "Target Support Files/Pods-SeeSky/Pods-SeeSky.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 		23AD841B29D0273F0010D868 /* structures */ = {
 			isa = PBXGroup;
 			children = (
+				3080C72729F8777F00271C7C /* ListFav.json */,
 				3080C72529F82FE900271C7C /* ListBodies.json */,
 				3080C72329F754BA00271C7C /* ListImgUrl.json */,
 				232C51DB29F13BF9003143AD /* Celestial.swift */,
@@ -92,6 +97,7 @@
 				23EFD86629D2D5680080E687 /* SearchViewController.swift */,
 				232C51DF29F1464E003143AD /* FavoritesViewController.swift */,
 				3080C71629F5622100271C7C /* CategoryViewController.swift */,
+				3080C72929F8856200271C7C /* SettingViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 				3080C6FD29F41ED900271C7C /* Celestials.json in Resources */,
 				3037C44229CC818A00CEFC73 /* LaunchScreen.storyboard in Resources */,
 				3080C72429F754BA00271C7C /* ListImgUrl.json in Resources */,
+				3080C72829F8777F00271C7C /* ListFav.json in Resources */,
 				3037C43F29CC818A00CEFC73 /* Assets.xcassets in Resources */,
 				3037C43D29CC818600CEFC73 /* Main.storyboard in Resources */,
 				3080C71429F54D4700271C7C /* Figtree-Regular.ttf in Resources */,
@@ -296,6 +303,7 @@
 				3080C71B29F5885000271C7C /* InfoCollectionViewCell.swift in Sources */,
 				232C51DC29F13BF9003143AD /* Celestial.swift in Sources */,
 				23EFD86E29D387B50080E687 /* OTDCell.swift in Sources */,
+				3080C72A29F8856200271C7C /* SettingViewController.swift in Sources */,
 				3080C71729F5622100271C7C /* CategoryViewController.swift in Sources */,
 				3080C71929F5629F00271C7C /* ElemTableViewCell.swift in Sources */,
 				23EFD86729D2D5680080E687 /* SearchViewController.swift in Sources */,

@@ -288,3 +288,41 @@ func get3ElemRandom(_ list: [Celestial]) -> [Celestial]{
     
     return result
 }
+
+///Retrieves list of favorites
+func getListFav() -> [String]{
+    var result : [String] = []
+    
+    guard let url = Bundle.main.url(forResource: "ListFav", withExtension: "json") else {
+        fatalError("File JSON non trovato")
+    }
+
+    do {
+        let data = try Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        let object = try decoder.decode([String].self, from: data)
+        // Usa l'oggetto "object" come desideri
+        print(object)
+        result = object
+    } catch {
+        print("Errore nella lettura del file JSON: \(error.localizedDescription)")
+    }
+    
+    return result
+}
+
+
+///Retrieves the element with that english name
+func getCelestial(_ list: [Celestial], _ englishName: String) -> Celestial{
+    var result : Celestial = defaultCelestial
+    
+    for elem in list {
+        if elem.englishName.uppercased() == englishName.uppercased(){
+            result = elem
+            break
+        }
+    }
+    
+    return result
+    
+}
