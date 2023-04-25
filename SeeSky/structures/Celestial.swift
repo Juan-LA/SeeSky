@@ -78,12 +78,17 @@ class Celestial: Decodable, Hashable {
             return false
         }
     }
+    
+    
+    
+    
 
 }
 let defaultCelestial = Celestial(id: "", name: "", maxDistFromSun: 0, gravity: 0.0, equaRadius: 0, bodyType: "")
 
 let categories = ["Star", "Planet" , "Dwarf Planet", "Asteroid", "Comet", "Moon"]
 
+let celestials = getBodies()
 ///Function that retrieves Celestials with isFavorite flag ON
 //func getFavorites() -> [Celestial] {
 //
@@ -207,49 +212,42 @@ let categories = ["Star", "Planet" , "Dwarf Planet", "Asteroid", "Comet", "Moon"
 //}
 
 
+///Retrieve data by specific category
+func getBodiesByCategory(_ list: [Celestial], _ category: String) -> [Celestial]{
+    var result : [Celestial] = []
+    
+    for elem in list {
+        if elem.bodyType.uppercased() == category.uppercased(){
+            result.append(elem)
+        }
+    }
+   
+    
+    return result
+}
+
+
 
 
 func getBodies() -> [Celestial]{
     
     var result : [Celestial] = []
     
-    guard let url = URL(string: "https://api.le-systeme-solaire.net/rest/bodies") else{
-        return result
+    guard let url = Bundle.main.url(forResource: "listBodies", withExtension: "json") else {
+        fatalError("File JSON non trovato")
     }
-    
-    let task = URLSession.shared.dataTask(with: url){
-        data, response, error in
-        
+
+    do {
+        let data = try Data(contentsOf: url)
         let decoder = JSONDecoder()
-        
-        if let data = data {
-            do{
-                let tasks = try decoder.decode([String:[Celestial]].self, from: data)
-                
-                let values = tasks.values
-                
-                result = tasks["bodies"]!
-                
-//                values.forEach{ i in
-//                    i.forEach{
-//                        elem in
-//                        print ("\(elem.id)\t\(elem.englishName)\t\(elem.bodyType)")
-//                    }
-//                }
-                
-                result.forEach{
-                    i in print(i.englishName)
-                }
-                
-                
-            }catch{
-                print(error)
-            }
-            
-        }
+        let object = try decoder.decode([String:[Celestial]].self, from: data)
+        // Usa l'oggetto "object" come desideri
+        print(object)
+        result = object["bodies"]!
+    } catch {
+        print("Errore nella lettura del file JSON: \(error.localizedDescription)")
     }
     
-    task.resume()
     return result
 }
 

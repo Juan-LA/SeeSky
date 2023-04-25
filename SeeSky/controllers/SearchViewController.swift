@@ -39,6 +39,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 //    var elemOTD : [Celestial] = getOTD()
     
     var selectedCategory : String = ""
+    var elemCat : [Celestial] = []
     
     
     
@@ -46,10 +47,16 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
         
         titlePage.textColor = .white
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
+        
+        
+        
+
+   
         
         ///SearchBar
-        searchBar.backgroundColor = .clear
-        searchBar.placeholder = "Explore the Universe"
+        searchBar.backgroundColor = #colorLiteral(red: 0.03254487365, green: 0.04431659728, blue: 0.08980644494, alpha: 1)
+        searchBar.placeholder = "Look for..."
         searchBar.isTranslucent = false
         searchBar.barTintColor = .clear
         searchBar.tintColor = .white
@@ -65,8 +72,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         
         
-//        sectionOTD.backgroundView?.backgroundColor = .blue
-        sectionOTD.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
+        sectionOTD.backgroundColor = .clear
         
         ///Categories Section
         CategoriesSectTitle.textColor = .white
@@ -74,11 +80,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         sectionCategories.delegate = self
         sectionCategories.dataSource = self
  
-//        sectionCategories.backgroundView?.backgroundColor = .green
-        sectionCategories.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
+        
+        sectionCategories.backgroundColor = .clear
         sectionCategories.tableFooterView = nil
         
-//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         
         
         scroll.isScrollEnabled = true
@@ -104,11 +109,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         ///Cells for Section Of The Day
         let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "OTDCell", for: indexPath) as! OTDCell
-        
-//        let firstElem = getAllCelestial()
-        
+       
         cell.name.text = "ciao"
-//        firstElem[indexPath.row].name
         cell.name.textColor = .white
         
         cell.img.image = UIImage(systemName: "house.fill")
@@ -129,6 +131,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         return cell
     }
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count + 1
     }
@@ -141,19 +145,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             
             return cell
         } else {
+            
             let cell = sectionCategories.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCell
             
-            
-            
-            var result = getBodies()
-            var imgUrls = getImgCat()
-            
-            
-            
-            
-            
-            
-            
+//            var result = getBodies()
+            let imgUrls = getImgCat()
             
             ///Content
             ///Hstack
@@ -162,20 +158,18 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             
             cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
             ///Text
-            ///\(firstElem[indexPath.row].name
-            
-            cell.name.text = "\t\(categories[indexPath.row])"
+            cell.name.text = "\t\(categories[indexPath.row])s"
             cell.hStack.layer.borderWidth = 2
             cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
             cell.img.kf.setImage(with: URL(string: imgUrls[indexPath.row]))
             
-            
             cell.name.textColor = .white
+            
             ///View with image inside
             cell.spaceForImg.layer.cornerRadius = 16
             cell.spaceForImg.backgroundColor = .clear
-            ///Img
             
+            ///Img
             cell.img.layer.cornerRadius = 16
             cell.backgroundColor = .clear
             
@@ -225,6 +219,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             
             catVC.selectedCategory = selectedCategory
             
+            catVC.elemCategory = elemCat
+            
             
             }
         }
@@ -235,8 +231,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         
         
-        selectedCategory = categories[sectionCategories.indexPathForSelectedRow?.row ?? 0]
+        selectedCategory = categories[indexPath.row]
         
+        print(celestials)
+        elemCat = getBodiesByCategory(celestials, selectedCategory)
+        print(selectedCategory)
         performSegue(withIdentifier: "category", sender: nil)
     }
     

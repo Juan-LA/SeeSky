@@ -23,6 +23,9 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        elemCategory = getBodiesByCategory(selectedCategory)
+      
+        
        
         ///Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
@@ -46,6 +49,9 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        elemCategory = getBodiesByCategory(celestials, selectedCategory)
+        
+        
         return elemCategory.count
     }
     
@@ -60,8 +66,8 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
         cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
         ///Text
-//        cell.name.text = "\t\(elemCategory[indexPath.row].name)"
         cell.name.textColor = .white
+        cell.name.text = "\t\(elemCategory[indexPath.row].englishName)"
         
         ///Button Star
 //        if elemCategory[indexPath.row].isFavorite {
