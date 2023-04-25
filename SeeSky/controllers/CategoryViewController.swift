@@ -23,21 +23,20 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        elemCategory = getBodiesByCategory(selectedCategory)
-      
         
+        self.navigationItem.titleView?.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
        
         ///Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         
         ///Text graphics
-        categoryName.textColor = .white
+//        categoryName.textColor = .white
         ///Table
         tableCatElem.backgroundColor = .clear
         
 //        elemCategory = getListType(selectedCategory)
         
-        categoryName.text = selectedCategory
+//        categoryName.text = selectedCategory
         
         tableCatElem.delegate = self
         tableCatElem.dataSource = self
@@ -98,6 +97,8 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
             guard let celVC = segue.destination as? CelestialViewController else {return}
             
             celVC.selectedCelestial = selectedCelestial
+            celVC.navigationItem.title = "\(selectedCelestial.englishName)"
+            
             
             }
         

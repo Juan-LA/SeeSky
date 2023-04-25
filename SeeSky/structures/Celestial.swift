@@ -233,7 +233,7 @@ func getBodies() -> [Celestial]{
     
     var result : [Celestial] = []
     
-    guard let url = Bundle.main.url(forResource: "listBodies", withExtension: "json") else {
+    guard let url = Bundle.main.url(forResource: "ListBodies", withExtension: "json") else {
         fatalError("File JSON non trovato")
     }
 
@@ -269,6 +269,29 @@ func getImgCat() -> [String]{
     } catch {
         print("Errore nella lettura del file JSON: \(error.localizedDescription)")
     }
+    
+    return result
+}
+
+func get3ElemRandom(_ list: [Celestial]) -> [Celestial]{
+    var result : [Celestial] = []
+    var temp : Celestial
+    
+    while result.count != 3 {
+        var exists = false
+        temp = list[Int.random(in: 0...list.count)]
+        for i in 0..<result.count {
+            if temp == result[i]{
+                exists = true
+                break
+            }
+        }
+        if exists == false {
+            result.append(temp)
+        }
+    }
+    
+    
     
     return result
 }

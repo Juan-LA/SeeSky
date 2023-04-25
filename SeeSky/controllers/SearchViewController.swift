@@ -40,6 +40,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     var selectedCategory : String = ""
     var elemCat : [Celestial] = []
+    var OTDElem : [Celestial] = []
+    let imgUrls = getImgCat()
     
     
     
@@ -48,11 +50,15 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         titlePage.textColor = .white
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
-        
-        
-        
-
-   
+        self.navigationController?.navigationBar.tintColor = .white
+//        let appearance = UINavigationBarAppearance()
+////                                appearance.configureWithOpaqueBackground()
+//                                self.navigationController?.navigationBar.isTranslucent = false  // pass "true" for fixing iOS 15.0 black bg issue
+//                      // We need to set tintcolor for iOS 15.0
+//        appearance.shadowColor = .clear    //removing navigationbar 1 px bottom border.
+//                                UINavigationBar.appearance().standardAppearance = appearance
+//                                UINavigationBar.appearance().scrollEdgeAppearance = appearance
+//                    
         
         ///SearchBar
         searchBar.backgroundColor = #colorLiteral(red: 0.03254487365, green: 0.04431659728, blue: 0.08980644494, alpha: 1)
@@ -61,16 +67,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         searchBar.barTintColor = .clear
         searchBar.tintColor = .white
         
-
-//        searchBar.backgroundColor = UIColor.red
-        
         ///OTD Section
         OTDSectionTitle.textColor = .white
         
         sectionOTD.delegate = self
         sectionOTD.dataSource = self
-        
-        
         
         sectionOTD.backgroundColor = .clear
         
@@ -80,11 +81,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         sectionCategories.delegate = self
         sectionCategories.dataSource = self
  
-        
         sectionCategories.backgroundColor = .clear
         sectionCategories.tableFooterView = nil
-        
-        
         
         scroll.isScrollEnabled = true
         
@@ -100,7 +98,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        OTDElem = get3ElemRandom(celestials)
+        return OTDElem.count
     }
     
     
@@ -110,11 +109,12 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         ///Cells for Section Of The Day
         let cell = sectionOTD.dequeueReusableCell(withReuseIdentifier: "OTDCell", for: indexPath) as! OTDCell
        
-        cell.name.text = "ciao"
+        cell.name.text = OTDElem[indexPath.row].englishName
         cell.name.textColor = .white
         
-        cell.img.image = UIImage(systemName: "house.fill")
+        cell.img.kf.setImage(with: URL(string: imgUrls[categories.firstIndex(of: OTDElem[indexPath.row].bodyType)!]))
         cell.img.layer.cornerRadius = 16
+        
         
         cell.spaceForImg.backgroundColor = .clear
         cell.spaceForImg.layer.cornerRadius = 16
@@ -149,7 +149,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             let cell = sectionCategories.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCell
             
 //            var result = getBodies()
-            let imgUrls = getImgCat()
+            
             
             ///Content
             ///Hstack
@@ -220,6 +220,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             catVC.selectedCategory = selectedCategory
             
             catVC.elemCategory = elemCat
+            
+            catVC.navigationItem.title = "\(selectedCategory)s"
+//            catVC.navigationItem.titleView?.tintColor = .white
+//            catVC.navigationItem.titleView?.backgroundColor = .cyan
+//            catVC.navigationItem.titleView?.backgroundColor =  UIColor(patternImage: UIImage(named: "wallpaper")!)
+//            catVC.navigationController?.navigationBar.tintColor = .white
+            
             
             
             }
