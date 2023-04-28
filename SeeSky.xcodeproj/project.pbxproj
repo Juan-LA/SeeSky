@@ -11,6 +11,8 @@
 		232C51DC29F13BF9003143AD /* Celestial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C51DB29F13BF9003143AD /* Celestial.swift */; };
 		232C51E029F1464E003143AD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C51DF29F1464E003143AD /* FavoritesViewController.swift */; };
 		232C51E229F14D5A003143AD /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C51E129F14D5A003143AD /* FavTableViewCell.swift */; };
+		2333C28929FAE5E0000C74E3 /* SearchClickedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2333C28829FAE5E0000C74E3 /* SearchClickedViewController.swift */; };
+		2333C28B29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2333C28A29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift */; };
 		23AD842029D029EA0010D868 /* CelestialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD841F29D029EA0010D868 /* CelestialViewController.swift */; };
 		23EFD83C29D02BEC0080E687 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD83B29D02BEC0080E687 /* data.swift */; };
 		23EFD86729D2D5680080E687 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD86629D2D5680080E687 /* SearchViewController.swift */; };
@@ -38,6 +40,8 @@
 		232C51DB29F13BF9003143AD /* Celestial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celestial.swift; sourceTree = "<group>"; };
 		232C51DF29F1464E003143AD /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		232C51E129F14D5A003143AD /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
+		2333C28829FAE5E0000C74E3 /* SearchClickedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClickedViewController.swift; sourceTree = "<group>"; };
+		2333C28A29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedElementsTableViewCell.swift; sourceTree = "<group>"; };
 		23AD841F29D029EA0010D868 /* CelestialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialViewController.swift; sourceTree = "<group>"; };
 		23EFD83B29D02BEC0080E687 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		23EFD86629D2D5680080E687 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				232C51DF29F1464E003143AD /* FavoritesViewController.swift */,
 				3080C71629F5622100271C7C /* CategoryViewController.swift */,
 				3080C72929F8856200271C7C /* SettingViewController.swift */,
+				2333C28829FAE5E0000C74E3 /* SearchClickedViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 				232C51E129F14D5A003143AD /* FavTableViewCell.swift */,
 				3080C71829F5629F00271C7C /* ElemTableViewCell.swift */,
 				3080C71A29F5885000271C7C /* InfoCollectionViewCell.swift */,
+				2333C28A29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2333C28929FAE5E0000C74E3 /* SearchClickedViewController.swift in Sources */,
 				23EFD83C29D02BEC0080E687 /* data.swift in Sources */,
 				23EFD86A29D2DB560080E687 /* CategoryCell.swift in Sources */,
 				3080C71B29F5885000271C7C /* InfoCollectionViewCell.swift in Sources */,
@@ -311,6 +318,7 @@
 				232C51E029F1464E003143AD /* FavoritesViewController.swift in Sources */,
 				3037C43829CC818600CEFC73 /* ViewController.swift in Sources */,
 				3037C43629CC818600CEFC73 /* AppDelegate.swift in Sources */,
+				2333C28B29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift in Sources */,
 				3037C43A29CC818600CEFC73 /* Experience.rcproject in Sources */,
 				23AD842029D029EA0010D868 /* CelestialViewController.swift in Sources */,
 			);

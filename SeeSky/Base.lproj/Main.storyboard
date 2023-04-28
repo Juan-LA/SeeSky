@@ -659,6 +659,11 @@
                                     <outlet property="delegate" destination="Dnd-YY-W8e" id="RMy-DL-OjM"/>
                                 </connections>
                             </searchBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FG1-X5-Oce">
+                                <rect key="frame" x="19" y="253" width="374" height="861"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="scrollableAxes" translatesAutoresizingMaskIntoConstraints="NO" id="1DK-SJ-QfY">
                                 <rect key="frame" x="0.0" y="253" width="414" height="1847"/>
                                 <subviews>
@@ -1003,6 +1008,7 @@
                     <connections>
                         <outlet property="CategoriesSectTitle" destination="eHB-2v-AKr" id="5FT-pY-lQC"/>
                         <outlet property="OTDSectionTitle" destination="CVp-cc-Crg" id="u2D-gj-eT6"/>
+                        <outlet property="VwForSearchElem" destination="FG1-X5-Oce" id="3b7-hN-iNp"/>
                         <outlet property="scroll" destination="1DK-SJ-QfY" id="eCb-65-E9C"/>
                         <outlet property="searchBar" destination="mJn-79-VQa" id="KU9-76-iXW"/>
                         <outlet property="sectionCategories" destination="aVK-wj-GYE" id="Ql6-ba-ai8"/>
@@ -1104,6 +1110,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Wr8-ad-Y63" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6tc-iW-QSf">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.032544873654842377" green="0.044316597282886505" blue="0.089806444942951202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1219,9 +1226,64 @@
             </objects>
             <point key="canvasLocation" x="13078.260869565218" y="-100.44642857142857"/>
         </scene>
+        <!--Search Clicked View Controller-->
+        <scene sceneID="2rE-KE-AYQ">
+            <objects>
+                <viewController storyboardIdentifier="searchedElemVC" id="43Z-jN-w2k" customClass="SearchClickedViewController" customModule="SeeSky" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BbT-4N-qLX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dlR-gC-s0y">
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellElemSearched" rowHeight="219" id="ajo-WI-IiQ" customClass="SearchedElementsTableViewCell" customModule="SeeSky" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="219"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ajo-WI-IiQ" id="Ims-CC-wWt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="219"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsK-lM-pDa">
+                                                    <rect key="frame" x="186" y="99" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qsK-lM-pDa" firstAttribute="centerY" secondItem="Ims-CC-wWt" secondAttribute="centerY" id="0LF-JX-pDe"/>
+                                                <constraint firstItem="qsK-lM-pDa" firstAttribute="centerX" secondItem="Ims-CC-wWt" secondAttribute="centerX" id="PVP-HZ-IoZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="elemLbl" destination="qsK-lM-pDa" id="Skb-OC-eVy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cJi-vq-17r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dlR-gC-s0y" firstAttribute="leading" secondItem="cJi-vq-17r" secondAttribute="leading" id="0Rf-98-hjO"/>
+                            <constraint firstItem="cJi-vq-17r" firstAttribute="bottom" secondItem="dlR-gC-s0y" secondAttribute="bottom" id="JZA-oC-ANL"/>
+                            <constraint firstItem="dlR-gC-s0y" firstAttribute="top" secondItem="cJi-vq-17r" secondAttribute="top" constant="100" id="NyL-e9-5LZ"/>
+                            <constraint firstItem="cJi-vq-17r" firstAttribute="trailing" secondItem="dlR-gC-s0y" secondAttribute="trailing" id="X96-yL-LZp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="dlR-gC-s0y" id="Q0f-SG-BxH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8h6-zs-vmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18983" y="-3177"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RKf-EX-ibN"/>
+        <segue reference="J70-7c-zXW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arkit" catalog="system" width="128" height="125"/>
