@@ -10,6 +10,7 @@ import UIKit
 class SearchedElementsTableViewCell: UITableViewCell {
     
     
+    @IBOutlet weak var img: UIImageView!
     
     @IBOutlet weak var elemLbl: UILabel!
     

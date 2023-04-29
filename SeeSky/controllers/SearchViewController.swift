@@ -286,60 +286,153 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
     }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.scroll.isHidden = false
         VwForSearchElem.isHidden = true
     }
     
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        let planetsFake = ["moon", "mars", "venus", "sun", "fakeplanets"]
-        
-        guard let searchText = searchBar.text else {
-            return
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if let touch = touches.first {
+            if !searchBar.frame.contains(touch.location(in: view)) {
+                searchBar.resignFirstResponder()
+                scroll.isHidden = false
+                VwForSearchElem.isHidden = true
+            }
         }
-        
-        self.scroll.isHidden = true
-        
-        VwForSearchElem.isHidden = false
-        
-        print(searchText)
+    }
 
-        guard let searchedElemVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchedElemVC") as? SearchClickedViewController else { return }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //        let planetsFake = ["moon", "mars", "venus", "sun", "fakeplanets"]
+        //
+                guard let searchText = searchBar.text else {
+                    return
+                }
+                
+                guard !searchText.isEmpty && searchText != " " && searchText.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 else {
+                    self.scroll.isHidden = false
+                    VwForSearchElem.isHidden = true
+                    return
+                }
+                
+                self.scroll.isHidden = true
+                
+                VwForSearchElem.isHidden = false
+                
+                print(searchText)
 
-        searchedElemVC.elem = planetsFake
-//        searchedElemVC.searchBar = searchBar
+                guard let searchedElemVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchedElemVC") as? SearchClickedViewController else { return }
+                
+                
+                let bodies = getBodies()
+                
+                let filteredBodies = bodies.filter { $0.englishName.lowercased().contains(searchText.lowercased())
+                }
+                
+                let boh = filteredBodies.map{
+                    $0.englishName
+                }
+                print("BOH", boh)
 
-//        searchBar.delegate = searchedElemVC
+                searchedElemVC.elem = filteredBodies
+        //        searchedElemVC.searchBar = searchBar
 
-
-//        searchedElemVC.view.addSubview(searchBar)
-
-        self.addChild(searchedElemVC)
-        
-        searchedElemVC.view.frame = VwForSearchElem.bounds
-        
-        VwForSearchElem.addSubview(searchedElemVC.view)
-        searchedElemVC.didMove(toParent: self)
-//        searchedElemVC.didMove(toParent: self)
-
-//        activate the search bar
-//        searchBar.isHidden = false
-//        searchBar.isUserInteractionEnabled = true
-//        searchBar.alpha = 1.0
+        //        searchBar.delegate = searchedElemVC
 
 
-//        hide all the existent views except for searchBar and the new view (searchElemVC)
-//        self.view.subviews.forEach {
-//            if $0 != searchedElemVC.view && $0 != searchBar {
-//                $0.isHidden = true
-//            }
-//        }
-        
-        
+        //        searchedElemVC.view.addSubview(searchBar)
+
+                self.addChild(searchedElemVC)
+                
+                searchedElemVC.view.frame = VwForSearchElem.bounds
+                
+                VwForSearchElem.addSubview(searchedElemVC.view)
+                searchedElemVC.didMove(toParent: self)
+        //        searchedElemVC.didMove(toParent: self)
+
+        //        activate the search bar
+        //        searchBar.isHidden = false
+        //        searchBar.isUserInteractionEnabled = true
+        //        searchBar.alpha = 1.0
+
+
+        //        hide all the existent views except for searchBar and the new view (searchElemVC)
+        //        self.view.subviews.forEach {
+        //            if $0 != searchedElemVC.view && $0 != searchBar {
+        //                $0.isHidden = true
+        //            }
+        //        }
+                
     }
     
+    
+//
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//
+////        let planetsFake = ["moon", "mars", "venus", "sun", "fakeplanets"]
+////
+//        guard let searchText = searchBar.text else {
+//            return
+//        }
+//
+//        guard !searchText.isEmpty && searchText != " " && searchText.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 else {
+//            return
+//        }
+//
+//        self.scroll.isHidden = true
+//
+//        VwForSearchElem.isHidden = false
+//
+//        print(searchText)
+//
+//        guard let searchedElemVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchedElemVC") as? SearchClickedViewController else { return }
+//
+//
+//        let bodies = getBodies()
+//
+//        let filteredBodies = bodies.filter { $0.englishName.lowercased().contains(searchText.lowercased())
+//        }
+//
+//        let boh = filteredBodies.map{
+//            $0.englishName
+//        }
+//        print("BOH", boh)
+//
+//        searchedElemVC.elem = filteredBodies
+////        searchedElemVC.searchBar = searchBar
+//
+////        searchBar.delegate = searchedElemVC
+//
+//
+////        searchedElemVC.view.addSubview(searchBar)
+//
+//        self.addChild(searchedElemVC)
+//
+//        searchedElemVC.view.frame = VwForSearchElem.bounds
+//
+//        VwForSearchElem.addSubview(searchedElemVC.view)
+//        searchedElemVC.didMove(toParent: self)
+////        searchedElemVC.didMove(toParent: self)
+//
+////        activate the search bar
+////        searchBar.isHidden = false
+////        searchBar.isUserInteractionEnabled = true
+////        searchBar.alpha = 1.0
+//
+//
+////        hide all the existent views except for searchBar and the new view (searchElemVC)
+////        self.view.subviews.forEach {
+////            if $0 != searchedElemVC.view && $0 != searchBar {
+////                $0.isHidden = true
+////            }
+////        }
+//
+//
+//    }
+//
     
 }
 

@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchClickedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     
-    let planetsFake = ["moon", "mars", "jove", "venus", "pluton"]
+//    let planetsFake = ["moon", "mars", "jove", "venus", "pluton"]
     
-    var elem: [String]?
+    var elem: [Celestial]?
     
 //    var searchBar: UISearchBar?
     
@@ -39,12 +40,12 @@ class SearchClickedViewController: UIViewController, UITableViewDataSource, UITa
 //    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 //        dismiss(animated: true, completion: nil)
 //    }
-//    
+//
 //    // handle the search button action
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 //        searchBar.resignFirstResponder()
 //    }
-//    
+//
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         elem?.count ?? 0
     }
@@ -53,7 +54,11 @@ class SearchClickedViewController: UIViewController, UITableViewDataSource, UITa
         
         let cell = table.dequeueReusableCell(withIdentifier: "cellElemSearched") as! SearchedElementsTableViewCell
         
-        cell.elemLbl.text = elem?[indexPath.row]
+        cell.elemLbl.text = elem?[indexPath.row].englishName
+        
+//        cell.img.kf.setImage(with: URL(string: imgUrls[indexPath.row]))
+        
+//        cell.img.kf.setImage(with: URL(string: elem[indexPath.row]))
         
         
         return cell
