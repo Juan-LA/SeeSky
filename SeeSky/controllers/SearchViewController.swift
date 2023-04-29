@@ -43,6 +43,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 //    var elemOTD : [Celestial] = getOTD()
     
     var selectedCategory : String = ""
+    var selectedElem : Celestial = defaultCelestial
     var elemCat : [Celestial] = []
     var OTDElem : [Celestial] = []
     let imgUrls = getImgCat()
@@ -279,20 +280,34 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             
             catVC.navigationItem.title = "\(selectedCategory)s"
             
-            }
+        } else if (segue.identifier == "details"){
+            guard let detailsVC = segue.destination as? CelestialViewController else {return}
+            
+            detailsVC.selectedCelestial = selectedElem
+            detailsVC.navigationItem.title = "\(selectedElem.englishName)"
         }
+    }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        ///Preparing data to send to Category Controller when selecting a row
-        selectedCategory = categories[indexPath.row]
-        
-        print(celestials)
-        elemCat = getBodiesByCategory(celestials, selectedCategory)
-        print(selectedCategory)
-        performSegue(withIdentifier: "category", sender: nil)
+        if tableView == self.sectionCategories {
+            ///Preparing data to send to Category Controller when selecting a row
+            selectedCategory = categories[indexPath.row]
+            
+            print(celestials)
+            elemCat = getBodiesByCategory(celestials, selectedCategory)
+            print(selectedCategory)
+            performSegue(withIdentifier: "category", sender: nil)
+        } else {
+            
+            selectedElem = filteredBodies[indexPath.row]
+            print(selectedElem)
+//            elemCat = getBodiesByCategory(celestials, selectedCategory)
+//            print(selectedCategory)
+            performSegue(withIdentifier: "details", sender: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

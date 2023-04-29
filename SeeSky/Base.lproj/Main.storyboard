@@ -1091,6 +1091,7 @@
                         <outlet property="tableFiltered" destination="Abq-To-ldF" id="Zkh-Rf-ZIJ"/>
                         <outlet property="titlePage" destination="nny-oR-P72" id="k9v-NB-ZbN"/>
                         <segue destination="lUR-sU-ziM" kind="show" identifier="category" id="P0N-AN-Rdg"/>
+                        <segue destination="i6e-5Q-dc1" kind="show" identifier="details" id="zoe-OJ-zc4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCb-Je-cpy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1178,7 +1179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDe-b3-cRd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16721.739130434784" y="-2481.0267857142858"/>
+            <point key="canvasLocation" x="16791" y="-2750"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hO0-dF-mNr">
@@ -1334,7 +1335,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="J70-7c-zXW"/>
+        <segue reference="zoe-OJ-zc4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arkit" catalog="system" width="128" height="125"/>
