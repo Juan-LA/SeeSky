@@ -14,6 +14,7 @@ class SearchedElementsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var elemLbl: UILabel!
     
+    @IBOutlet weak var hStack: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

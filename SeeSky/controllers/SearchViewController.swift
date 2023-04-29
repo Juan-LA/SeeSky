@@ -18,6 +18,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var VwForSearchElem: UIView!
     
+    @IBOutlet weak var tableFiltered: UITableView!
     
     @IBOutlet weak var OTDSectionTitle: UILabel!
     
@@ -27,7 +28,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var sectionCategories: UITableView!
     
-//    ///Data
+   
+    
+    //    ///Data
 //    var constellations : [Celestial] = getListType("constellation")
 //    var planets : [Celestial] = getListType("planet")
 //    var asteroids : [Celestial] = getListType("asteroid")
@@ -43,6 +46,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     var elemCat : [Celestial] = []
     var OTDElem : [Celestial] = []
     let imgUrls = getImgCat()
+    var filteredBodies : [Celestial] = getBodies()
+    var bodies : [Celestial] = getBodies()
     
     
     
@@ -92,18 +97,26 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         VwForSearchElem.isHidden = true
         
+        ///Search section
+        self.VwForSearchElem.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
+        
+        tableFiltered.delegate = self
+        tableFiltered.dataSource = self
+        
+        
         
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let totalHeight = OTDSectionTitle.frame.height + sectionOTD.frame.height + CategoriesSectTitle.frame.height + sectionCategories.contentSize.height
-        
-        scroll.contentSize = CGSize(width: view.frame.width, height: totalHeight)
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        let totalHeight = OTDSectionTitle.frame.height + sectionOTD.frame.height + CategoriesSectTitle.frame.height + sectionCategories.contentSize.height
+//
+//        scroll.contentSize = CGSize(width: view.frame.width, height: totalHeight)
+//    }
     
     
+    ///Num of elements available in OTD section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         OTDElem = get3ElemRandom(celestials)
         return OTDElem.count
@@ -141,51 +154,88 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
 
     
-    
+    ///Number of rows in Categories table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count + 1
+        if tableView == self.tableFiltered{
+            return filteredBodies.count
+        } else {
+            return categories.count + 1
+        }
     }
     
     ///Function to create cell of table Categories
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == categories.count{
-            let cell = UITableViewCell()
-            cell.backgroundColor = .clear
+        
+        if tableView == self.tableFiltered {
+            if indexPath.row == filteredBodies.count {
+                let cell = UITableViewCell()
+                cell.backgroundColor = .clear
+                
+                return cell
+            } else {
+                
+                let cell = tableFiltered.dequeueReusableCell(withIdentifier: "cellElemSearched", for: indexPath) as! SearchedElementsTableViewCell
+                
+                ///Content
+                ///Hstack
+                cell.hStack.layer.cornerRadius = 16
+                cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
             
-            return cell
+                ///Text
+                cell.elemLbl.text = "\t\(filteredBodies[indexPath.row].englishName)"
+                cell.hStack.layer.borderWidth = 2
+                cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
+                cell.img.kf.setImage(with: URL(string: imgUrls[0]))
+                cell.elemLbl.textColor = .white
+                
+                ///View with image inside
+                cell.img.layer.cornerRadius = 16
+                cell.img.backgroundColor = .clear
+                
+                ///Img
+                cell.img.layer.cornerRadius = 16
+                cell.backgroundColor = .clear
+                
+                return cell
+            }
         } else {
-            
-            let cell = sectionCategories.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCell
-            
-//            var result = getBodies()
-            
-            
-            ///Content
-            ///Hstack
-            cell.hStack.layer.cornerRadius = 16
-            
-            
-            cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
-            ///Text
-            cell.name.text = "\t\(categories[indexPath.row])s"
-            cell.hStack.layer.borderWidth = 2
-            cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
-            cell.img.kf.setImage(with: URL(string: imgUrls[indexPath.row]))
-            
-            cell.name.textColor = .white
-            
-            ///View with image inside
-            cell.spaceForImg.layer.cornerRadius = 16
-            cell.spaceForImg.backgroundColor = .clear
-            
-            ///Img
-            cell.img.layer.cornerRadius = 16
-            cell.backgroundColor = .clear
-            
-            return cell
+            if indexPath.row == categories.count {
+                let cell = UITableViewCell()
+                cell.backgroundColor = .clear
+                
+                return cell
+            } else {
+                
+                let cell = sectionCategories.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCell
+                
+                ///Content
+                ///Hstack
+                cell.hStack.layer.cornerRadius = 16
+                cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
+                
+                ///Text
+                cell.name.text = "\t\(categories[indexPath.row])s"
+                cell.hStack.layer.borderWidth = 2
+                cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
+                cell.img.kf.setImage(with: URL(string: imgUrls[indexPath.row]))
+                cell.name.textColor = .white
+                
+                ///View with image inside
+                cell.spaceForImg.layer.cornerRadius = 16
+                cell.spaceForImg.backgroundColor = .clear
+                
+                ///Img
+                cell.img.layer.cornerRadius = 16
+                cell.backgroundColor = .clear
+                
+                return cell
+            }
         }
+        
+        
     }
     
+    ///Height of row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == categories.count{
             return 40
@@ -195,6 +245,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
     }
 
+    ///Returns the number of the selected row
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if indexPath.row == categories.count{
             return nil
@@ -204,12 +255,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     
-        
-        
-        
-        
-        
-        
         /*
          // MARK: - Navigation
          
@@ -222,6 +267,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        ///Prepare fot Category controller
         if (segue.identifier == "category"){
             
             guard let catVC = segue.destination as? CategoryViewController else {return}
@@ -231,12 +278,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             catVC.elemCategory = elemCat
             
             catVC.navigationItem.title = "\(selectedCategory)s"
-//            catVC.navigationItem.titleView?.tintColor = .white
-//            catVC.navigationItem.titleView?.backgroundColor = .cyan
-//            catVC.navigationItem.titleView?.backgroundColor =  UIColor(patternImage: UIImage(named: "wallpaper")!)
-//            catVC.navigationController?.navigationBar.tintColor = .white
-            
-            
             
             }
         }
@@ -245,8 +286,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        
-        
+        ///Preparing data to send to Category Controller when selecting a row
         selectedCategory = categories[indexPath.row]
         
         print(celestials)
@@ -277,6 +317,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+   
+    
+    
     
 }
 
@@ -287,11 +330,13 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
     }
     
+    ///What happens when the string is deleted from searchbar
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.scroll.isHidden = false
         VwForSearchElem.isHidden = true
     }
     
+    ///What happens when the bar is touched
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         if let touch = touches.first {
@@ -303,11 +348,10 @@ extension SearchViewController: UISearchBarDelegate {
         }
     }
 
-    
-    
+    ///If text inside searchbar changes
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //        let planetsFake = ["moon", "mars", "venus", "sun", "fakeplanets"]
-        //
+        
+                ///Takes the string inside the searchbar
                 guard let searchText = searchBar.text else {
                     return
                 }
@@ -324,20 +368,21 @@ extension SearchViewController: UISearchBarDelegate {
                 
                 print(searchText)
 
-                guard let searchedElemVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchedElemVC") as? SearchClickedViewController else { return }
+//                guard let searchedElemVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchedElemVC") as? SearchClickedViewController else { return }
+           
                 
-                
-                let bodies = getBodies()
-                
-                let filteredBodies = bodies.filter { $0.englishName.lowercased().contains(searchText.lowercased())
+                filteredBodies = bodies.filter { $0.englishName.lowercased().contains(searchText.lowercased())
                 }
                 
-                let boh = filteredBodies.map{
+                let mapping = filteredBodies.map{
                     $0.englishName
                 }
-                print("BOH", boh)
+                print("BOH", mapping)
 
-                searchedElemVC.elem = filteredBodies
+        self.tableFiltered.reloadData()
+        
+        
+    }
         //        searchedElemVC.searchBar = searchBar
 
         //        searchBar.delegate = searchedElemVC
@@ -345,12 +390,19 @@ extension SearchViewController: UISearchBarDelegate {
 
         //        searchedElemVC.view.addSubview(searchBar)
 
-                self.addChild(searchedElemVC)
-                
-                searchedElemVC.view.frame = VwForSearchElem.bounds
-                
-                VwForSearchElem.addSubview(searchedElemVC.view)
-                searchedElemVC.didMove(toParent: self)
+        
+        
+        
+//                self.addChild(searchedElemVC)
+//
+//                searchedElemVC.view.frame = VwForSearchElem.bounds
+//
+//                VwForSearchElem.addSubview(searchedElemVC.view)
+//                searchedElemVC.didMove(toParent: self)
+        
+        
+        
+        
         //        searchedElemVC.didMove(toParent: self)
 
         //        activate the search bar
@@ -366,7 +418,7 @@ extension SearchViewController: UISearchBarDelegate {
         //            }
         //        }
                 
-    }
+
     
     
 //
