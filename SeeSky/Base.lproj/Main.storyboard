@@ -660,10 +660,10 @@
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FG1-X5-Oce" userLabel="VwForSearchElem">
-                                <rect key="frame" x="0.0" y="253" width="414" height="1847"/>
+                                <rect key="frame" x="0.0" y="253" width="414" height="1764"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Abq-To-ldF">
-                                        <rect key="frame" x="10" y="10" width="394" height="1827"/>
+                                        <rect key="frame" x="10" y="10" width="394" height="1744"/>
                                         <color key="backgroundColor" red="0.032544873654842377" green="0.044316597282886505" blue="0.089806444942951202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellElemSearched" rowHeight="120" id="Lc4-16-6vM" customClass="SearchedElementsTableViewCell" customModule="SeeSky" customModuleProvider="target">
@@ -727,7 +727,6 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Abq-To-ldF" secondAttribute="bottom" constant="10" id="4BE-VO-H1x"/>
                                     <constraint firstItem="Abq-To-ldF" firstAttribute="leading" secondItem="FG1-X5-Oce" secondAttribute="leading" constant="10" id="CkL-Cu-89g"/>
@@ -1061,14 +1060,15 @@
                         <viewLayoutGuide key="safeArea" id="8rx-Lc-aF8"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mJn-79-VQa" secondAttribute="trailing" id="3X1-nr-V4k"/>
+                            <constraint firstItem="FG1-X5-Oce" firstAttribute="leading" secondItem="8rx-Lc-aF8" secondAttribute="leading" id="A41-Zd-zy1"/>
                             <constraint firstItem="mJn-79-VQa" firstAttribute="leading" secondItem="8rx-Lc-aF8" secondAttribute="leading" id="Au9-Ln-y3l"/>
                             <constraint firstItem="1DK-SJ-QfY" firstAttribute="trailing" secondItem="mJn-79-VQa" secondAttribute="trailing" id="FuP-Oz-F8L"/>
                             <constraint firstItem="1DK-SJ-QfY" firstAttribute="leading" secondItem="mJn-79-VQa" secondAttribute="leading" id="IyZ-z2-FoU"/>
                             <constraint firstAttribute="bottom" secondItem="1DK-SJ-QfY" secondAttribute="bottom" id="KUK-5p-1qe"/>
                             <constraint firstItem="1DK-SJ-QfY" firstAttribute="top" secondItem="mJn-79-VQa" secondAttribute="bottom" id="LKj-4S-W07"/>
                             <constraint firstItem="x2P-Vx-enw" firstAttribute="top" secondItem="8rx-Lc-aF8" secondAttribute="top" id="Ouj-0g-oBV"/>
-                            <constraint firstItem="FG1-X5-Oce" firstAttribute="bottom" secondItem="1DK-SJ-QfY" secondAttribute="bottom" id="Oxv-V6-Vjv"/>
                             <constraint firstItem="1DK-SJ-QfY" firstAttribute="width" secondItem="Qze-U1-TsR" secondAttribute="width" id="RCd-rM-dHa"/>
+                            <constraint firstItem="FG1-X5-Oce" firstAttribute="bottom" secondItem="8rx-Lc-aF8" secondAttribute="bottom" id="SMn-k7-Znt"/>
                             <constraint firstItem="1DK-SJ-QfY" firstAttribute="leading" secondItem="8rx-Lc-aF8" secondAttribute="leading" id="UJX-4E-Rof"/>
                             <constraint firstItem="mJn-79-VQa" firstAttribute="top" secondItem="8rx-Lc-aF8" secondAttribute="top" constant="49" id="Zsj-tW-FB9"/>
                             <constraint firstItem="FG1-X5-Oce" firstAttribute="top" secondItem="mJn-79-VQa" secondAttribute="bottom" id="c3k-qi-G1U"/>

@@ -77,6 +77,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         searchBar.barTintColor = .clear
         searchBar.tintColor = .white
         
+        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+
+        textFieldInsideSearchBar?.textColor = .white
+        
         ///OTD Section
         OTDSectionTitle.textColor = .white
         
