@@ -100,6 +100,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         scroll.isScrollEnabled = true
         
+        sectionCategories.isScrollEnabled = false
+        
         VwForSearchElem.isHidden = true
         
         ///Search section
