@@ -63,6 +63,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         ///Info
         infoColl.dataSource = self
         infoColl.delegate = self
+    
         
         
         
@@ -119,7 +120,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.nameLbl.textColor = .white
             
             ///Divider
-//            cell.divider.layer.cornerRadius = 16
+//            cell.divider.layer.cornerRadius = 32
 //            cell.divider.backgroundColor = UIColor(white: 1, alpha: 0.5)
             
             
