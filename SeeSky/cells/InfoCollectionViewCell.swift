@@ -12,6 +12,7 @@ class InfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dataLbl: UILabel!
     
     @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var divider: UIView!
     
     
 }

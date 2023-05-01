@@ -14,6 +14,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     var selectedCelestial : Celestial = defaultCelestial
     
     var info : [String] = []
+    var listInfo: [String] = ["Type", "Radius", "Gravity", "Distance from Sun"]
     
     @IBOutlet weak var OTDLbl: UILabel!
     ///Name of the celestial
@@ -38,7 +39,11 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         
         super.viewDidLoad()
         
-        
+        ///Update var Info
+        info.append(selectedCelestial.bodyType)
+        info.append(String(selectedCelestial.equaRadius))
+        info.append(String(selectedCelestial.gravity))
+        info.append(String(selectedCelestial.aphelion))
         
         ///Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
@@ -58,6 +63,8 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         ///Info
         infoColl.dataSource = self
         infoColl.delegate = self
+        
+        
         
         ///Description section
         desc.textColor = .white
@@ -108,9 +115,19 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.dataLbl.textColor = .white
             
             ///Info
-            cell.nameLbl.text = "Ciao"
+            cell.nameLbl.text = listInfo[indexPath.row]
             cell.nameLbl.textColor = .white
+            
+            ///Divider
+//            cell.divider.layer.cornerRadius = 16
+//            cell.divider.backgroundColor = UIColor(white: 1, alpha: 0.5)
+            
+            
+            
+            
+            
             return cell
+            
         }
         
        
