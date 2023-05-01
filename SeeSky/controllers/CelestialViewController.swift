@@ -16,9 +16,6 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     var info : [String] = []
     var listInfo: [String] = ["Type", "Radius", "Gravity", "Distance from Sun"]
     
-    @IBOutlet weak var OTDLbl: UILabel!
-    ///Name of the celestial
-    @IBOutlet weak var celestialLbl: UILabel!
     ///Image of the celestial
     @IBOutlet weak var celestialImg: UIImageView!
     ///Info Collection
@@ -89,7 +86,14 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         if collectionView == self.celestialNearby{
             return 5
         } else {
-            return info.count
+            
+            if selectedCelestial.englishName == "Sun"{
+                info.removeLast()
+                return info.count
+            } else {
+                return info.count
+            }
+            
         }
         
     }
@@ -112,7 +116,15 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
             ///Background
             cell.backgroundColor = .clear
             ///Data shown
-            cell.dataLbl.text = info[indexPath.row]
+            switch indexPath.row{
+            case 0:
+                cell.dataLbl.text = "\(info[indexPath.row])"
+                break
+            default:
+                cell.dataLbl.text = "\(info[indexPath.row]) km"
+                break
+            }
+            
             cell.dataLbl.textColor = .white
             
             ///Info
@@ -120,9 +132,9 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.nameLbl.textColor = .white
             
             ///Divider
-//            cell.divider.layer.cornerRadius = 32
-//            cell.divider.backgroundColor = UIColor(white: 1, alpha: 0.5)
-            
+            if indexPath.row == info.count - 1 {
+                cell.divider.isHidden = true
+            }
             
             
             
