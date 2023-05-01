@@ -44,23 +44,18 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         
         ///Is OTD?
-        OTDLbl.textColor = .systemIndigo
-//        if selectedCelestial.isOTD{
-//            OTDLbl.text = "\(selectedCelestial.type) of the Day"
-//        } else {
-            OTDLbl.isHidden = true
-//        }
+//        OTDLbl.textColor = .systemIndigo
+//        OTDLbl.isHidden = true
         
         ///Celestial's name
-        celestialLbl.textColor = .white
+//        celestialLbl.textColor = .white
 //        celestialLbl.text = selectedCelestial.name
         
         ///Celestial Image
-//        celestialImg.kf.setImage(with: URL(string: selectedCelestial.image))
-        celestialImg.layer.cornerRadius = 16
+        celestialImg.kf.setImage(with: URL(string: getImage(englishName: selectedCelestial.englishName)))
+        celestialImg.layer.cornerRadius = 32
         
         ///Info
-//        info = getInfo(selectedCelestial)
         infoColl.dataSource = self
         infoColl.delegate = self
         

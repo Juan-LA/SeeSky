@@ -98,9 +98,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         sectionCategories.backgroundColor = .clear
         sectionCategories.tableFooterView = nil
         
-        scroll.isScrollEnabled = true
-        
         sectionCategories.isScrollEnabled = false
+        
+        scroll.isScrollEnabled = true
         
         VwForSearchElem.isHidden = true
         
