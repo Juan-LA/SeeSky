@@ -16,6 +16,8 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     var info : [String] = []
     var listInfo: [String] = ["Type", "Radius", "Gravity", "Distance from Sun"]
     
+    var descAndImage : DescAndImage = DescAndImage(englishName: "", url: "", desc: "")
+    
     ///Image of the celestial
     @IBOutlet weak var celestialImg: UIImageView!
     ///Info Collection
@@ -42,6 +44,9 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         info.append(String(selectedCelestial.gravity))
         info.append(String(selectedCelestial.aphelion))
         
+        ///Update var DescAndImage
+        descAndImage = getDescAndImage(englishName: selectedCelestial.englishName)
+        
         ///Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         
@@ -53,8 +58,18 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
 //        celestialLbl.textColor = .white
 //        celestialLbl.text = selectedCelestial.name
         
+        print("Body type: \(selectedCelestial.bodyType)")
+        
         ///Celestial Image
-        celestialImg.kf.setImage(with: URL(string: getImage(englishName: selectedCelestial.englishName)))
+        let url = descAndImage.url
+        
+        if url == " " {
+                celestialImg.image = UIImage(named: selectedCelestial.bodyType)
+            } else {
+                celestialImg.kf.setImage(with: URL(string: url))
+            }
+        
+        
         celestialImg.layer.cornerRadius = 32
         
         ///Info
@@ -66,7 +81,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         
         ///Description section
         desc.textColor = .white
-//        desc.text = selectedCelestial.desc
+        desc.text = descAndImage.desc
         
         updateUI()
 

@@ -26,18 +26,22 @@ import Kingfisher
 //    }
 //}
 
-class ImageURL : Decodable{
+class DescAndImage : Decodable{
     var englishName : String
     var url: String
+    var desc: String
     
-    init(englishName: String, url: String) {
+    init(englishName: String, url:String, desc:String){
         self.englishName = englishName
         self.url = url
+        self.desc = desc
     }
+    
     
     enum CodingKeys : String, CodingKey{
         case englishName
         case url
+        case desc
     }
 }
 
@@ -344,8 +348,38 @@ func getCelestial(_ list: [Celestial], _ englishName: String) -> Celestial{
 }
 
 
-func getImage(englishName: String) -> String {
-    var result : String = ""
+//func getImage(englishName: String) -> String {
+//    var result : String = ""
+//    
+//    guard let url = Bundle.main.url(forResource: "ListImages", withExtension: "json") else {
+//        fatalError("File JSON non trovato")
+//    }
+//    
+//    do {
+//        let data = try Data(contentsOf: url)
+//        let decoder = JSONDecoder()
+//        let object = try decoder.decode([DescAndImage].self, from: data)
+//        // Usa l'oggetto "object" come desideri
+//        print(object.count)
+//        for elem in object{
+//            if elem.englishName == englishName{
+//                result = elem.url
+//                break
+//            }
+//        }
+//        
+//    } catch {
+//        print("Errore nella lettura del file JSON: \(error.localizedDescription)")
+//    }
+//    
+//    
+//    
+//    return result
+//    
+//}
+
+func getDescAndImage(englishName: String) -> DescAndImage {
+    var result : DescAndImage = DescAndImage(englishName: "", url: "", desc: "")
     
     guard let url = Bundle.main.url(forResource: "ListImages", withExtension: "json") else {
         fatalError("File JSON non trovato")
@@ -354,12 +388,11 @@ func getImage(englishName: String) -> String {
     do {
         let data = try Data(contentsOf: url)
         let decoder = JSONDecoder()
-        let object = try decoder.decode([ImageURL].self, from: data)
+        let object = try decoder.decode([DescAndImage].self, from: data)
         // Usa l'oggetto "object" come desideri
-        print(object.count)
-        for elem in object{
-            if elem.englishName == englishName{
-                result = elem.url
+        for elem in object {
+            if elem.englishName == englishName {
+                result = elem
                 break
             }
         }
@@ -371,7 +404,6 @@ func getImage(englishName: String) -> String {
     
     
     return result
-    
 }
     
 
