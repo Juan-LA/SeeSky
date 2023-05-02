@@ -317,6 +317,7 @@ func getListFav() -> [String]{
         let decoder = JSONDecoder()
         let object = try decoder.decode([String].self, from: data)
         // Usa l'oggetto "object" come desideri
+        print("SONO NELLA LETTuraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAaAaa")
         print(object)
         result = object
     } catch {
@@ -370,4 +371,107 @@ func getImage(englishName: String) -> String {
     
     
     return result
+    
 }
+    
+
+
+//func addToFav(_ str: String) {
+//    guard let url = Bundle.main.url(forResource: "ListFav", withExtension: "json") else {
+//        fatalError("not found!")
+//    }
+//    do {
+//        let data = try Data(contentsOf: url)
+//        let decoder = JSONDecoder()
+//        var strings = try decoder.decode([String].self, from: data)
+//        print(strings)
+//
+//        strings.append(str)
+//
+//        let updatedJsonData = try JSONEncoder().encode(strings)
+//        try updatedJsonData.write(to: url)
+//
+//
+//    }
+//    catch {
+//        print("errore")
+//    }
+//
+//    print("yo sono qua: ",getListFav())
+//
+//}
+//
+
+
+
+
+
+func searchIfItFav(_ str: String) -> Bool {
+    let arr = getListFav2()
+    print(arr)
+    for i in arr {
+        if i.lowercased() == str.lowercased() {
+            return true
+        }
+    }
+    return false
+    
+}
+
+func removeTheFavStar(_ str: String) {
+    var favs = getListFav2()
+    favs.removeAll(where: { $0 == str })
+    
+    guard let plistUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("ListFav.plist") else {
+        fatalError("Cannot get URL for plist file")
+    }
+    do {
+        let data = try PropertyListSerialization.data(fromPropertyList: favs, format: .binary, options: 0)
+        try data.write(to: plistUrl)
+    } catch {
+        print(error)
+    }
+    
+    
+}
+func getListFav2() -> [String] {
+    guard let plistUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("ListFav.plist"),
+          let data = try? Data(contentsOf: plistUrl),
+          let array = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String] else {
+        return []
+    }
+    return array
+}
+
+func addToFav(_ str: String) {
+    var favs = getListFav2()
+    favs.append(str)
+    guard let plistUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("ListFav.plist") else {
+        fatalError("Cannot get URL for plist file")
+    }
+    do {
+        let data = try PropertyListSerialization.data(fromPropertyList: favs, format: .binary, options: 0)
+        try data.write(to: plistUrl)
+    } catch {
+        print(error)
+    }
+}
+
+func createPlistFileIfNeeded() {
+    let fileManager = FileManager.default
+    guard let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+        fatalError("Document directory not found")
+    }
+    let fileURL = documentsDirectory.appendingPathComponent("ListFav.plist")
+    if !fileManager.fileExists(atPath: fileURL.path) {
+        let favs: [String] = []
+        do {
+            let data = try PropertyListSerialization.data(fromPropertyList: favs, format: .binary, options: 0)
+            try data.write(to: fileURL)
+        } catch {
+            print("Error creating plist file: \(error)")
+        }
+    }
+}
+    
+

@@ -47,6 +47,9 @@
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="btnFavPressedforFav:" destination="Ss5-yj-gOc" eventType="touchUpInside" id="ukb-Yu-qg6"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.03254487365" green="0.044316597280000002" blue="0.089806444939999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1145,6 +1148,9 @@
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="btnFavPressed:" destination="ch8-Sy-FBR" eventType="touchUpInside" id="hYy-to-GRX"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.03254487365" green="0.044316597280000002" blue="0.089806444939999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1345,7 +1351,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zoe-OJ-zc4"/>
+        <segue reference="RKf-EX-ibN"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arkit" catalog="system" width="128" height="125"/>

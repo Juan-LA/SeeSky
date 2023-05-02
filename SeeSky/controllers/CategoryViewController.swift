@@ -68,11 +68,21 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         cell.name.textColor = .white
         cell.name.text = "\t\(elemCategory[indexPath.row].englishName)"
         
+        
+        cell.celestial = elemCategory[indexPath.row]
+        
+        if searchIfItFav(elemCategory[indexPath.row].englishName) {
+            cell.btn.setImage(UIImage(systemName: "star.fill")?.withTintColor(.white), for: .normal)
+        }
+        else {
+            cell.btn.setImage(UIImage(systemName: "star")?.withTintColor(.white), for: .normal)
+        }
+        
         ///Button Star
 //        if elemCategory[indexPath.row].isFavorite {
 //            cell.btn.setImage(UIImage(systemName: "star.fill")?.withTintColor(.white), for: .normal)
 //        } else {
-            cell.btn.setImage(UIImage(systemName: "star")?.withTintColor(.white), for: .normal)
+//            cell.btn.setImage(UIImage(systemName: "star")?.withTintColor(.white), for: .normal)
 //        }
         return cell
     }
