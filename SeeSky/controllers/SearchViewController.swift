@@ -46,6 +46,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     var selectedElem : Celestial = defaultCelestial
     var elemCat : [Celestial] = []
     var OTDElem : [Celestial] = []
+    var OTDImg : [DescAndImage] = []
     let imgUrls = getImgCat()
     var filteredBodies : [Celestial] = getBodies()
     var bodies : [Celestial] = getBodies()
@@ -126,6 +127,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     ///Num of elements available in OTD section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         OTDElem = get3ElemRandom(celestials)
+        for elem in OTDElem {
+            OTDImg.append(getDescAndImage(englishName: elem.englishName))
+        }
+        
         return OTDElem.count
     }
     
@@ -139,7 +144,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         cell.name.text = OTDElem[indexPath.row].englishName
         cell.name.textColor = .white
         
-        cell.img.kf.setImage(with: URL(string: imgUrls[categories.firstIndex(of: OTDElem[indexPath.row].bodyType)!]))
+        if OTDImg[indexPath.row].url == " "{
+            cell.img.image = UIImage(named: OTDElem[indexPath.row].bodyType)
+        } else {
+            cell.img.kf.setImage(with: URL(string: OTDImg[indexPath.row].url))
+        }
+        
+        
         cell.img.layer.cornerRadius = 16
         
         
@@ -157,6 +168,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
        
         return cell
     }
+    
+    
+    
     
     
 
@@ -292,6 +306,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             detailsVC.selectedCelestial = selectedElem
             detailsVC.navigationItem.title = "\(selectedElem.englishName)"
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        selectedElem = OTDElem[indexPath.row]
+        
+        performSegue(withIdentifier: "details", sender: nil)
     }
     
     
