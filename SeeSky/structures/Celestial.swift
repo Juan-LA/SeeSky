@@ -254,6 +254,7 @@ func getBodies() -> [Celestial]{
         // Usa l'oggetto "object" come desideri
         print(object)
         result = object["bodies"]!
+        result = result.sorted { $0.englishName < $1.englishName}
     } catch {
         print("Errore nella lettura del file JSON: \(error.localizedDescription)")
     }
@@ -265,19 +266,24 @@ func getBodies() -> [Celestial]{
 func getImgCat() -> [String]{
     var result : [String] = []
     
-    guard let url = Bundle.main.url(forResource: "ListImgUrl", withExtension: "json") else {
-        fatalError("File JSON non trovato")
-    }
-
-    do {
-        let data = try Data(contentsOf: url)
-        let decoder = JSONDecoder()
-        let object = try decoder.decode([String].self, from: data)
-        // Usa l'oggetto "object" come desideri
-        print(object)
-        result = object
-    } catch {
-        print("Errore nella lettura del file JSON: \(error.localizedDescription)")
+    var bodies = getBodies()
+    
+    for c in categories {
+        var bodiesInCategory = getBodiesByCategory(bodies, c)
+        for i in 0..<bodiesInCategory.count{
+            var url = getDescAndImage(englishName: getBodiesByCategory(bodies, c)[i].englishName).url
+            
+            if url != " "
+            {
+                result.append(url)
+                break
+            }
+            
+            if i == bodiesInCategory.count - 1 {
+                result.append("https://static.wikia.nocookie.net/omniversal-battlefield/images/6/61/Sun.png/")
+            }
+        }
+        
     }
     
     return result
