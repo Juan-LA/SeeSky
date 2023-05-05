@@ -70,7 +70,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
             }
         
         
-        celestialImg.layer.cornerRadius = 32
+//        celestialImg.layer.cornerRadius = 16
         
         ///Info
         infoColl.dataSource = self

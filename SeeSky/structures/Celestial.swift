@@ -297,7 +297,7 @@ func get3ElemRandom(_ list: [Celestial]) -> [Celestial]{
     
     while result.count != 3 {
         var exists = false
-        temp = list[Int.random(in: 0...list.count)]
+        temp = list[Int.random(in: 0...list.count-1)]
         for i in 0..<result.count {
             if temp == result[i]{
                 exists = true
