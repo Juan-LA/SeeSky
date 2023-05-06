@@ -6,8 +6,10 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Figtree-Regular</string>
-		<string>Figtree-SemiBold</string>
+		<string>Figtree-Black.ttf</string>
+		<string>Figtree-Bold.ttf</string>
+		<string>Figtree-Italic.ttf</string>
+		<string>Figtree-Light.ttf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

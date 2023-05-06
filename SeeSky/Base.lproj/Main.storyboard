@@ -846,11 +846,11 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHB-2v-AKr">
-                                                <rect key="frame" x="20" y="218" width="117.5" height="28"/>
+                                                <rect key="frame" x="20" y="218" width="121.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="B0b-uX-QQy"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1226,10 +1226,8 @@
                         </textAttributes>
                         <navigationBarAppearance key="standardAppearance" backgroundImage="wallpaper">
                             <color key="backgroundColor" red="0.032544873654842377" green="0.044316597282886505" blue="0.089806444942951202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <textAttributes key="titleTextAttributes">
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </textAttributes>
                             <textAttributes key="largeTitleTextAttributes">
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </textAttributes>
                         </navigationBarAppearance>

@@ -84,6 +84,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         ///OTD Section
         OTDSectionTitle.textColor = .white
+        OTDSectionTitle.font = UIFont(name: "Figtree-Black", size: 25)
         
         sectionOTD.delegate = self
         sectionOTD.dataSource = self
@@ -111,7 +112,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         tableFiltered.delegate = self
         tableFiltered.dataSource = self
         
-        
+//        let attrs = [
+//            NSAttributedString.Key.foregroundColor: UIColor.red,
+//            NSAttributedString.Key.font: UIFont(name: "Figtree-Black", size: 34)!
+//        ]
+//
+//        self.navigationItem.standardAppearance?.titleTextAttributes = attrs
+//        
         
         // Do any additional setup after loading the view.
     }
@@ -305,6 +312,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             
             detailsVC.selectedCelestial = selectedElem
             detailsVC.navigationItem.title = "\(selectedElem.englishName)"
+            
         }
     }
     
@@ -410,8 +418,6 @@ extension SearchViewController: UISearchBarDelegate {
                 
                 print(searchText)
 
-//                guard let searchedElemVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchedElemVC") as? SearchClickedViewController else { return }
-           
                 
                 filteredBodies = bodies.filter { $0.englishName.lowercased().contains(searchText.lowercased())
                 }
@@ -425,108 +431,6 @@ extension SearchViewController: UISearchBarDelegate {
         
         
     }
-        //        searchedElemVC.searchBar = searchBar
-
-        //        searchBar.delegate = searchedElemVC
-
-
-        //        searchedElemVC.view.addSubview(searchBar)
-
-        
-        
-        
-//                self.addChild(searchedElemVC)
-//
-//                searchedElemVC.view.frame = VwForSearchElem.bounds
-//
-//                VwForSearchElem.addSubview(searchedElemVC.view)
-//                searchedElemVC.didMove(toParent: self)
-        
-        
-        
-        
-        //        searchedElemVC.didMove(toParent: self)
-
-        //        activate the search bar
-        //        searchBar.isHidden = false
-        //        searchBar.isUserInteractionEnabled = true
-        //        searchBar.alpha = 1.0
-
-
-        //        hide all the existent views except for searchBar and the new view (searchElemVC)
-        //        self.view.subviews.forEach {
-        //            if $0 != searchedElemVC.view && $0 != searchBar {
-        //                $0.isHidden = true
-        //            }
-        //        }
-                
-
-    
-    
-//
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//
-////        let planetsFake = ["moon", "mars", "venus", "sun", "fakeplanets"]
-////
-//        guard let searchText = searchBar.text else {
-//            return
-//        }
-//
-//        guard !searchText.isEmpty && searchText != " " && searchText.trimmingCharacters(in: .whitespacesAndNewlines).count != 0 else {
-//            return
-//        }
-//
-//        self.scroll.isHidden = true
-//
-//        VwForSearchElem.isHidden = false
-//
-//        print(searchText)
-//
-//        guard let searchedElemVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchedElemVC") as? SearchClickedViewController else { return }
-//
-//
-//        let bodies = getBodies()
-//
-//        let filteredBodies = bodies.filter { $0.englishName.lowercased().contains(searchText.lowercased())
-//        }
-//
-//        let boh = filteredBodies.map{
-//            $0.englishName
-//        }
-//        print("BOH", boh)
-//
-//        searchedElemVC.elem = filteredBodies
-////        searchedElemVC.searchBar = searchBar
-//
-////        searchBar.delegate = searchedElemVC
-//
-//
-////        searchedElemVC.view.addSubview(searchBar)
-//
-//        self.addChild(searchedElemVC)
-//
-//        searchedElemVC.view.frame = VwForSearchElem.bounds
-//
-//        VwForSearchElem.addSubview(searchedElemVC.view)
-//        searchedElemVC.didMove(toParent: self)
-////        searchedElemVC.didMove(toParent: self)
-//
-////        activate the search bar
-////        searchBar.isHidden = false
-////        searchBar.isUserInteractionEnabled = true
-////        searchBar.alpha = 1.0
-//
-//
-////        hide all the existent views except for searchBar and the new view (searchElemVC)
-////        self.view.subviews.forEach {
-////            if $0 != searchedElemVC.view && $0 != searchBar {
-////                $0.isHidden = true
-////            }
-////        }
-//
-//
-//    }
-//
     
 }
 

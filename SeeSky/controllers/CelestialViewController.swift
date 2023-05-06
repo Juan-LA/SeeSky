@@ -40,7 +40,16 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         
         scrollVW.isScrollEnabled = true
-        
+        let navigation = UINavigationBar.appearance()
+
+        let navigationFont = UIFont(name: "Figtree-Black", size: 20)
+        let navigationLargeFont = UIFont(name: "Futura", size: 34) //34 is Large Title size by default
+
+        navigation.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: navigationFont!]
+
+        if #available(iOS 11, *){
+            navigation.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: navigationLargeFont!]
+        }
         ///Update var Info
         info.append(selectedCelestial.bodyType)
         info.append(String(selectedCelestial.equaRadius))
