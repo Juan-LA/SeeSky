@@ -18,6 +18,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     
     var descAndImage : DescAndImage = DescAndImage(englishName: "", url: "", desc: "")
     
+    @IBOutlet weak var scrollVW: UIScrollView!
     ///Image of the celestial
     @IBOutlet weak var celestialImg: UIImageView!
     ///Info Collection
@@ -37,6 +38,8 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         
         
         super.viewDidLoad()
+        
+        scrollVW.isScrollEnabled = true
         
         ///Update var Info
         info.append(selectedCelestial.bodyType)
@@ -82,6 +85,8 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         ///Description section
         desc.textColor = .white
         desc.text = descAndImage.desc
+        print("DESC: \(descAndImage.desc)")
+        
         
         updateUI()
 
