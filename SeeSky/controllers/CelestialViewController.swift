@@ -86,6 +86,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         
         ///Celestial Image
         let url = descAndImage.url
+        print(url)
         
         if url == " " {
                 celestialImg.image = UIImage(named: selectedCelestial.bodyType)
@@ -138,7 +139,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if collectionView == self.celestialNearby{
+        if collectionView == celestialNearby{
             let cell = celestialNearby.dequeueReusableCell(withReuseIdentifier: "nearby", for: indexPath) as! OTDCell
             
             let url = nearbyImg[indexPath.row].url
@@ -153,6 +154,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
                     }
                 }
 //                print("CAT: \(categories[position])")
+                print(categories[position])
                 cell.img.image = UIImage(named: "\(categories[position])")
                 
 //                cell.img.kf.setImage(with: URL(string: cat[position]))

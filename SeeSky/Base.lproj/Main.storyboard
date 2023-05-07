@@ -115,24 +115,27 @@
         <!--View Controller-->
         <scene sceneID="F2O-UY-5fa">
             <objects>
-                <viewController id="E3x-aH-v4p" sceneMemberID="viewController">
+                <viewController id="E3x-aH-v4p" customClass="ViewController" customModule="SeeSky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TJ2-hs-dcd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vm-ha-0Yi">
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qy6-nk-Zjf">
                                 <rect key="frame" x="0.0" y="48" width="414" height="814"/>
-                            </arscnView>
+                            </arView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cfd-P1-rPh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Cfd-P1-rPh" firstAttribute="bottom" secondItem="9vm-ha-0Yi" secondAttribute="bottom" id="LNC-C0-y8S"/>
-                            <constraint firstItem="Cfd-P1-rPh" firstAttribute="trailing" secondItem="9vm-ha-0Yi" secondAttribute="trailing" id="mJi-qe-Icx"/>
-                            <constraint firstItem="9vm-ha-0Yi" firstAttribute="top" secondItem="Cfd-P1-rPh" secondAttribute="top" id="qe2-Ve-59g"/>
-                            <constraint firstItem="9vm-ha-0Yi" firstAttribute="leading" secondItem="Cfd-P1-rPh" secondAttribute="leading" id="tfu-wF-4gE"/>
+                            <constraint firstItem="Cfd-P1-rPh" firstAttribute="bottom" secondItem="qy6-nk-Zjf" secondAttribute="bottom" id="DCP-Bc-Zh1"/>
+                            <constraint firstItem="qy6-nk-Zjf" firstAttribute="leading" secondItem="Cfd-P1-rPh" secondAttribute="leading" id="O0f-qU-mbg"/>
+                            <constraint firstItem="Cfd-P1-rPh" firstAttribute="trailing" secondItem="qy6-nk-Zjf" secondAttribute="trailing" id="Oxk-7W-1I5"/>
+                            <constraint firstItem="qy6-nk-Zjf" firstAttribute="top" secondItem="Cfd-P1-rPh" secondAttribute="top" id="lpc-gO-NUe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="arView" destination="qy6-nk-Zjf" id="vBA-PA-laC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZp-zg-fKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,7 +279,7 @@
         <!--View Controller-->
         <scene sceneID="4jV-Sl-zSP">
             <objects>
-                <viewController id="3gv-3A-Fxp" customClass="ViewController" customModule="SeeSky" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3gv-3A-Fxp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jxh-FH-myP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1597,7 +1600,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Inb-CX-xip"/>
+        <segue reference="rX5-XV-gEK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arkit" catalog="system" width="128" height="125"/>

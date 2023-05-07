@@ -13,6 +13,8 @@
 		232C51E229F14D5A003143AD /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C51E129F14D5A003143AD /* FavTableViewCell.swift */; };
 		2333C28929FAE5E0000C74E3 /* SearchClickedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2333C28829FAE5E0000C74E3 /* SearchClickedViewController.swift */; };
 		2333C28B29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2333C28A29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift */; };
+		237A737C2A07875000B2B2B1 /* thePlanets.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 237A737B2A07874F00B2B2B1 /* thePlanets.rcproject */; };
+		237A737E2A07893A00B2B2B1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237A737D2A07893A00B2B2B1 /* NavigationViewController.swift */; };
 		23AD842029D029EA0010D868 /* CelestialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD841F29D029EA0010D868 /* CelestialViewController.swift */; };
 		23EFD83C29D02BEC0080E687 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD83B29D02BEC0080E687 /* data.swift */; };
 		23EFD86729D2D5680080E687 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD86629D2D5680080E687 /* SearchViewController.swift */; };
@@ -41,6 +43,8 @@
 		232C51E129F14D5A003143AD /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
 		2333C28829FAE5E0000C74E3 /* SearchClickedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClickedViewController.swift; sourceTree = "<group>"; };
 		2333C28A29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedElementsTableViewCell.swift; sourceTree = "<group>"; };
+		237A737B2A07874F00B2B2B1 /* thePlanets.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = thePlanets.rcproject; sourceTree = "<group>"; };
+		237A737D2A07893A00B2B2B1 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		23AD841F29D029EA0010D868 /* CelestialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialViewController.swift; sourceTree = "<group>"; };
 		23EFD83B29D02BEC0080E687 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		23EFD86629D2D5680080E687 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				3080C71629F5622100271C7C /* CategoryViewController.swift */,
 				3080C72929F8856200271C7C /* SettingViewController.swift */,
 				2333C28829FAE5E0000C74E3 /* SearchClickedViewController.swift */,
+				237A737D2A07893A00B2B2B1 /* NavigationViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				3037C43529CC818600CEFC73 /* AppDelegate.swift */,
 				3037C43729CC818600CEFC73 /* ViewController.swift */,
 				3037C43929CC818600CEFC73 /* Experience.rcproject */,
+				237A737B2A07874F00B2B2B1 /* thePlanets.rcproject */,
 				3037C43B29CC818600CEFC73 /* Main.storyboard */,
 				3037C43E29CC818A00CEFC73 /* Assets.xcassets */,
 				3037C44029CC818A00CEFC73 /* LaunchScreen.storyboard */,
@@ -308,12 +314,14 @@
 				23EFD86E29D387B50080E687 /* OTDCell.swift in Sources */,
 				3080C72A29F8856200271C7C /* SettingViewController.swift in Sources */,
 				3080C71729F5622100271C7C /* CategoryViewController.swift in Sources */,
+				237A737E2A07893A00B2B2B1 /* NavigationViewController.swift in Sources */,
 				3080C71929F5629F00271C7C /* ElemTableViewCell.swift in Sources */,
 				23EFD86729D2D5680080E687 /* SearchViewController.swift in Sources */,
 				232C51E229F14D5A003143AD /* FavTableViewCell.swift in Sources */,
 				232C51E029F1464E003143AD /* FavoritesViewController.swift in Sources */,
 				3037C43829CC818600CEFC73 /* ViewController.swift in Sources */,
 				3037C43629CC818600CEFC73 /* AppDelegate.swift in Sources */,
+				237A737C2A07875000B2B2B1 /* thePlanets.rcproject in Sources */,
 				2333C28B29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift in Sources */,
 				3037C43A29CC818600CEFC73 /* Experience.rcproject in Sources */,
 				23AD842029D029EA0010D868 /* CelestialViewController.swift in Sources */,
@@ -464,7 +472,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4Q64HMZS63;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeeSky/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -501,7 +509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4Q64HMZS63;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeeSky/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
