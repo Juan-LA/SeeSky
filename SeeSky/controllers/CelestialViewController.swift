@@ -12,11 +12,15 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
     var selectedCelestial : Celestial = defaultCelestial
+    var nextCelestial : Celestial = defaultCelestial
     
     var info : [String] = []
     var listInfo: [String] = ["Type", "Radius", "Gravity", "Distance from Sun"]
     
     var descAndImage : DescAndImage = DescAndImage(englishName: "", url: "", desc: "")
+    
+    var nearbyElem : [Celestial] = []
+    var nearbyImg : [DescAndImage] = []
     
     @IBOutlet weak var scrollVW: UIScrollView!
     ///Image of the celestial
@@ -39,17 +43,25 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         
         super.viewDidLoad()
         
+
+        
+        updateUI()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func updateUI() {
         scrollVW.isScrollEnabled = true
-        let navigation = UINavigationBar.appearance()
-
-        let navigationFont = UIFont(name: "Figtree-Black", size: 20)
-        let navigationLargeFont = UIFont(name: "Futura", size: 34) //34 is Large Title size by default
-
-        navigation.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: navigationFont!]
-
-        if #available(iOS 11, *){
-            navigation.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: navigationLargeFont!]
-        }
+//        let navigation = UINavigationBar.appearance()
+//
+//        let navigationFont = UIFont(name: "Figtree-Black", size: 20)
+//        let navigationLargeFont = UIFont(name: "Futura", size: 34) //34 is Large Title size by default
+//
+//        navigation.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: navigationFont!]
+//
+//        if #available(iOS 11, *){
+//            navigation.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: navigationLargeFont!]
+//        }
         ///Update var Info
         info.append(selectedCelestial.bodyType)
         info.append(String(selectedCelestial.equaRadius))
@@ -87,33 +99,30 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         ///Info
         infoColl.dataSource = self
         infoColl.delegate = self
-    
+        infoColl.reloadData()
         
         
         
         ///Description section
         desc.textColor = .white
+        desc.adjustUITextViewHeight(arg: self.desc)
         desc.text = descAndImage.desc
         print("DESC: \(descAndImage.desc)")
         
-        
-        updateUI()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    func updateUI() {
-//        celestialLbl.text = selectedCelestial.name
-//        celestialImg.image = planetOfDay.image
-//        desc.text = selectedCelestial.desc
-//        details.text = planetOfDay.technical
+        ///Nearby Section
+        celestialNearby.dataSource = self
+        celestialNearby.delegate = self
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == self.celestialNearby{
-            return 5
+            nearbyElem = get3ElemRandom(celestials)
+            for elem in nearbyElem {
+                nearbyImg.append(getDescAndImage(englishName: elem.englishName))
+            }
+            return nearbyElem.count
         } else {
             
             if selectedCelestial.englishName == "Sun"{
@@ -132,8 +141,25 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         if collectionView == self.celestialNearby{
             let cell = celestialNearby.dequeueReusableCell(withReuseIdentifier: "nearby", for: indexPath) as! OTDCell
             
-            cell.img.image = UIImage(systemName: "house.fill")
-            cell.name.text = "Prova"
+            let url = nearbyImg[indexPath.row].url
+            
+            if url == " " {
+//                var cat = getImgCat()
+                var position : Int = 0
+                for i in 0..<categories.count {
+                    if categories[i] == selectedCelestial.bodyType{
+                        position = i
+                        break
+                    }
+                }
+//                print("CAT: \(categories[position])")
+                cell.img.image = UIImage(named: "\(categories[position])")
+                
+//                cell.img.kf.setImage(with: URL(string: cat[position]))
+                } else {
+                    cell.img.kf.setImage(with: URL(string: url))
+                }
+            cell.name.text = nearbyElem[indexPath.row].englishName
             cell.name.textColor = .white
             
             return cell
@@ -193,5 +219,30 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         // Pass the selected object to the new view controller.
     }
     */
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if (segue.identifier == "next"){
+//
+//            guard let celVC = segue.destination as? CelestialViewController else {return}
+//
+//            celVC.selectedCelestial = selectedCelestial
+//            celVC.navigationItem.title = "\(selectedCelestial.englishName)"
+//
+//
+//            }
+//
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == celestialNearby{
+            
+            ///Update the entire view with the new info
+            selectedCelestial = nearbyElem[indexPath.row]
+            self.navigationItem.title = selectedCelestial.englishName
+            updateUI()
+            self.viewDidLoad()
+        }
+    }
 
 }

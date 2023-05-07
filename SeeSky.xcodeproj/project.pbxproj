@@ -24,18 +24,6 @@
 		3037C43D29CC818600CEFC73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3037C43B29CC818600CEFC73 /* Main.storyboard */; };
 		3037C43F29CC818A00CEFC73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3037C43E29CC818A00CEFC73 /* Assets.xcassets */; };
 		3037C44229CC818A00CEFC73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3037C44029CC818A00CEFC73 /* LaunchScreen.storyboard */; };
-		305575E32A06D00700CB3674 /* Figtree-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575D72A06D00700CB3674 /* Figtree-LightItalic.ttf */; };
-		305575E42A06D00700CB3674 /* Figtree-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575D82A06D00700CB3674 /* Figtree-Medium.ttf */; };
-		305575E52A06D00700CB3674 /* Figtree-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575D92A06D00700CB3674 /* Figtree-MediumItalic.ttf */; };
-		305575E62A06D00700CB3674 /* Figtree-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575DA2A06D00700CB3674 /* Figtree-SemiBoldItalic.ttf */; };
-		305575E72A06D00700CB3674 /* Figtree-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575DB2A06D00700CB3674 /* Figtree-Bold.ttf */; };
-		305575E82A06D00700CB3674 /* Figtree-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575DC2A06D00700CB3674 /* Figtree-Italic.ttf */; };
-		305575E92A06D00700CB3674 /* Figtree-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575DD2A06D00700CB3674 /* Figtree-BlackItalic.ttf */; };
-		305575EA2A06D00700CB3674 /* Figtree-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575DE2A06D00700CB3674 /* Figtree-ExtraBold.ttf */; };
-		305575EB2A06D00700CB3674 /* Figtree-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575DF2A06D00700CB3674 /* Figtree-Black.ttf */; };
-		305575EC2A06D00700CB3674 /* Figtree-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575E02A06D00700CB3674 /* Figtree-ExtraBoldItalic.ttf */; };
-		305575ED2A06D00700CB3674 /* Figtree-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575E12A06D00700CB3674 /* Figtree-Light.ttf */; };
-		305575EE2A06D00700CB3674 /* Figtree-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305575E22A06D00700CB3674 /* Figtree-BoldItalic.ttf */; };
 		3080C6FD29F41ED900271C7C /* Celestials.json in Resources */ = {isa = PBXBuildFile; fileRef = 3080C6FC29F41ED800271C7C /* Celestials.json */; };
 		3080C71729F5622100271C7C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080C71629F5622100271C7C /* CategoryViewController.swift */; };
 		3080C71929F5629F00271C7C /* ElemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080C71829F5629F00271C7C /* ElemTableViewCell.swift */; };
@@ -65,18 +53,6 @@
 		3037C43C29CC818600CEFC73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3037C43E29CC818A00CEFC73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3037C44129CC818A00CEFC73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		305575D72A06D00700CB3674 /* Figtree-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-LightItalic.ttf"; sourceTree = "<group>"; };
-		305575D82A06D00700CB3674 /* Figtree-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Medium.ttf"; sourceTree = "<group>"; };
-		305575D92A06D00700CB3674 /* Figtree-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-MediumItalic.ttf"; sourceTree = "<group>"; };
-		305575DA2A06D00700CB3674 /* Figtree-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		305575DB2A06D00700CB3674 /* Figtree-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Bold.ttf"; sourceTree = "<group>"; };
-		305575DC2A06D00700CB3674 /* Figtree-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Italic.ttf"; sourceTree = "<group>"; };
-		305575DD2A06D00700CB3674 /* Figtree-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-BlackItalic.ttf"; sourceTree = "<group>"; };
-		305575DE2A06D00700CB3674 /* Figtree-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBold.ttf"; sourceTree = "<group>"; };
-		305575DF2A06D00700CB3674 /* Figtree-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Black.ttf"; sourceTree = "<group>"; };
-		305575E02A06D00700CB3674 /* Figtree-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		305575E12A06D00700CB3674 /* Figtree-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-Light.ttf"; sourceTree = "<group>"; };
-		305575E22A06D00700CB3674 /* Figtree-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Figtree-BoldItalic.ttf"; sourceTree = "<group>"; };
 		3080C6FC29F41ED800271C7C /* Celestials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Celestials.json; sourceTree = "<group>"; };
 		3080C70029F494D000271C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3080C71629F5622100271C7C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +148,6 @@
 		3037C43429CC818600CEFC73 /* SeeSky */ = {
 			isa = PBXGroup;
 			children = (
-				305575EF2A06D17800CB3674 /* Fonts */,
 				3080C70029F494D000271C7C /* Info.plist */,
 				23EFD86829D2DAB90080E687 /* cells */,
 				23EFD83A29D02BDB0080E687 /* dummyData */,
@@ -186,25 +161,6 @@
 				3037C44029CC818A00CEFC73 /* LaunchScreen.storyboard */,
 			);
 			path = SeeSky;
-			sourceTree = "<group>";
-		};
-		305575EF2A06D17800CB3674 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				305575DF2A06D00700CB3674 /* Figtree-Black.ttf */,
-				305575DD2A06D00700CB3674 /* Figtree-BlackItalic.ttf */,
-				305575DB2A06D00700CB3674 /* Figtree-Bold.ttf */,
-				305575E22A06D00700CB3674 /* Figtree-BoldItalic.ttf */,
-				305575DE2A06D00700CB3674 /* Figtree-ExtraBold.ttf */,
-				305575E02A06D00700CB3674 /* Figtree-ExtraBoldItalic.ttf */,
-				305575DC2A06D00700CB3674 /* Figtree-Italic.ttf */,
-				305575E12A06D00700CB3674 /* Figtree-Light.ttf */,
-				305575D72A06D00700CB3674 /* Figtree-LightItalic.ttf */,
-				305575D82A06D00700CB3674 /* Figtree-Medium.ttf */,
-				305575D92A06D00700CB3674 /* Figtree-MediumItalic.ttf */,
-				305575DA2A06D00700CB3674 /* Figtree-SemiBoldItalic.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		5FD988D7598A6435DCE7F318 /* Frameworks */ = {
@@ -284,24 +240,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				305575EE2A06D00700CB3674 /* Figtree-BoldItalic.ttf in Resources */,
 				3080C72629F82FE900271C7C /* ListBodies.json in Resources */,
-				305575ED2A06D00700CB3674 /* Figtree-Light.ttf in Resources */,
 				3080C6FD29F41ED900271C7C /* Celestials.json in Resources */,
-				305575E62A06D00700CB3674 /* Figtree-SemiBoldItalic.ttf in Resources */,
-				305575E32A06D00700CB3674 /* Figtree-LightItalic.ttf in Resources */,
 				3037C44229CC818A00CEFC73 /* LaunchScreen.storyboard in Resources */,
-				305575E82A06D00700CB3674 /* Figtree-Italic.ttf in Resources */,
-				305575E52A06D00700CB3674 /* Figtree-MediumItalic.ttf in Resources */,
-				305575EB2A06D00700CB3674 /* Figtree-Black.ttf in Resources */,
-				305575E42A06D00700CB3674 /* Figtree-Medium.ttf in Resources */,
-				305575E72A06D00700CB3674 /* Figtree-Bold.ttf in Resources */,
-				305575EA2A06D00700CB3674 /* Figtree-ExtraBold.ttf in Resources */,
 				3080C72429F754BA00271C7C /* ListImgUrl.json in Resources */,
 				3080C72829F8777F00271C7C /* ListFav.json in Resources */,
-				305575E92A06D00700CB3674 /* Figtree-BlackItalic.ttf in Resources */,
 				3037C43F29CC818A00CEFC73 /* Assets.xcassets in Resources */,
-				305575EC2A06D00700CB3674 /* Figtree-ExtraBoldItalic.ttf in Resources */,
 				3037C43D29CC818600CEFC73 /* Main.storyboard in Resources */,
 				30F34F382A00025F0080B4FC /* ListImages.json in Resources */,
 			);

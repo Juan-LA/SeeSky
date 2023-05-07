@@ -56,6 +56,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+        
+        
+        
         titlePage.textColor = .white
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         self.navigationController?.navigationBar.tintColor = .white
@@ -84,7 +88,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         ///OTD Section
         OTDSectionTitle.textColor = .white
-        OTDSectionTitle.font = UIFont(name: "Figtree-Black", size: 25)
+//        OTDSectionTitle.font = UIFont(name: "Figtree-Black", size: 25)
         
         sectionOTD.delegate = self
         sectionOTD.dataSource = self
@@ -118,7 +122,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 //        ]
 //
 //        self.navigationItem.standardAppearance?.titleTextAttributes = attrs
-//        
+//
         
         // Do any additional setup after loading the view.
     }
@@ -202,7 +206,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                 return cell
             } else {
                 
-                let cell = tableFiltered.dequeueReusableCell(withIdentifier: "cellElemSearched", for: indexPath) as! SearchedElementsTableViewCell
+                let cell = tableFiltered.dequeueReusableCell(withIdentifier: "cellElemSearched", for: indexPath) as! ElemTableViewCell
                 
                 ///Content
                 ///Hstack
@@ -210,19 +214,19 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
                 cell.hStack.backgroundColor = UIColor(cgColor: CGColor(red: 8/255, green: 11/255, blue: 23/255, alpha: 1))
             
                 ///Text
-                cell.elemLbl.text = "\t\(filteredBodies[indexPath.row].englishName)"
+                cell.name.text = "\t\(filteredBodies[indexPath.row].englishName)"
                 cell.hStack.layer.borderWidth = 2
                 cell.hStack.layer.borderColor = CGColor(gray: 1, alpha: 0.3)
-                cell.img.kf.setImage(with: URL(string: imgUrls[0]))
-                cell.elemLbl.textColor = .white
+//                cell.img.kf.setImage(with: URL(string: imgUrls[0]))
+                cell.name.textColor = .white
                 
                 ///View with image inside
-                cell.img.layer.cornerRadius = 16
-                cell.img.backgroundColor = .clear
+//                cell.img.layer.cornerRadius = 16
+//                cell.img.backgroundColor = .clear
                 
                 ///Img
-                cell.img.layer.cornerRadius = 16
-                cell.backgroundColor = .clear
+//                cell.img.layer.cornerRadius = 16
+//                cell.backgroundColor = .clear
                 
                 return cell
             }
@@ -430,6 +434,16 @@ extension SearchViewController: UISearchBarDelegate {
         self.tableFiltered.reloadData()
         
         
+    }
+    
+}
+
+
+extension UITextView{
+    func adjustUITextViewHeight(arg : UITextView) {
+        arg.translatesAutoresizingMaskIntoConstraints = false
+        arg.sizeToFit()
+        arg.isScrollEnabled = false
     }
     
 }

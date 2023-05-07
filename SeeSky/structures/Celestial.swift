@@ -388,7 +388,7 @@ func getDescAndImage(englishName: String) -> DescAndImage {
     var result : DescAndImage = DescAndImage(englishName: "", url: "", desc: "")
     
     guard let url = Bundle.main.url(forResource: "ListImages", withExtension: "json") else {
-        fatalError("File JSON non trovato")
+        fatalError("File JSON non trovato QUI")
     }
     
     do {
@@ -404,7 +404,7 @@ func getDescAndImage(englishName: String) -> DescAndImage {
         }
         
     } catch {
-        print("Errore nella lettura del file JSON: \(error.localizedDescription)")
+        print("QUI Errore nella lettura del file JSON: \(error.localizedDescription)")
     }
     
     
@@ -512,4 +512,10 @@ func createPlistFileIfNeeded() {
     }
 }
     
+
+
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let welcome = try? JSONDecoder().decode(Welcome.self, from: jsonData)
 

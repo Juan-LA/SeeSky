@@ -14,8 +14,10 @@ class SettingViewController: UIViewController {
 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         self.navigationController?.navigationBar.tintColor = .white
-        self.navigationItem.title = "Settings"
+        self.navigationItem.title = "Credits"
         // Do any additional setup after loading the view.
+        
+        
     }
     
 

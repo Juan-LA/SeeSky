@@ -11,10 +11,12 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
 
     
     
+    @IBOutlet weak var textNoAva: UILabel!
     @IBOutlet weak var tableFavorite: UITableView!
     
     var fav = getListFav2()
     
+    var noElem : Bool = false
     
     var selectedCelestial = defaultCelestial
     
@@ -24,16 +26,29 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         fav = getListFav2()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationItem.title = "Favorites"
         
+        if noElem {
+            tableFavorite.isHidden = true
+            textNoAva.isHidden = false
+            
+            textNoAva.text = "No favorites elements..."
+            
+        } else {
+            tableFavorite.isHidden = false
+            textNoAva.isHidden = true
+            
+            tableFavorite.delegate = self
+            tableFavorite.dataSource = self
+            
+            tableFavorite.reloadData()
+        }
         
-        tableFavorite.delegate = self
-        tableFavorite.dataSource = self
-        
-        tableFavorite.reloadData()
         
 
         // Do any additional setup after loading the view.
@@ -41,12 +56,42 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         fav = getListFav2()
-        tableFavorite.reloadData()
+        noElem = fav.isEmpty
+        if noElem {
+            tableFavorite.isHidden = true
+            textNoAva.isHidden = false
+            
+            textNoAva.text = "No favorites elements..."
+            
+        } else {
+            tableFavorite.isHidden = false
+            textNoAva.isHidden = true
+            
+            tableFavorite.delegate = self
+            tableFavorite.dataSource = self
+            
+            tableFavorite.reloadData()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         fav = getListFav2()
-        tableFavorite.reloadData()
+        noElem = fav.isEmpty
+        if noElem {
+            tableFavorite.isHidden = true
+            textNoAva.isHidden = false
+            
+            textNoAva.text = "No favorites elements..."
+            
+        } else {
+            tableFavorite.isHidden = false
+            textNoAva.isHidden = true
+            
+            tableFavorite.delegate = self
+            tableFavorite.dataSource = self
+            
+            tableFavorite.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
