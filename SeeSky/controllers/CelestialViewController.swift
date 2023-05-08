@@ -52,22 +52,20 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func updateUI() {
         scrollVW.isScrollEnabled = true
-//        let navigation = UINavigationBar.appearance()
-//
-//        let navigationFont = UIFont(name: "Figtree-Black", size: 20)
-//        let navigationLargeFont = UIFont(name: "Futura", size: 34) //34 is Large Title size by default
-//
-//        navigation.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: navigationFont!]
-//
-//        if #available(iOS 11, *){
-//            navigation.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: navigationLargeFont!]
-//        }
+        self.navigationItem.title = selectedCelestial.englishName
+        
+        nearbyImg = []
+        
+//        info = []
+//        nearbyElem = get3ElemRandom(celestials)
+//        infoColl.reloadData()
+//        celestialNearby.reloadData()
         ///Update var Info
         info.append(selectedCelestial.bodyType)
         info.append(String(selectedCelestial.equaRadius))
         info.append(String(selectedCelestial.gravity))
         info.append(String(selectedCelestial.aphelion))
-        
+        descAndImage = DescAndImage(englishName: "", url: "", desc: "")
         ///Update var DescAndImage
         descAndImage = getDescAndImage(englishName: selectedCelestial.englishName)
         
@@ -111,6 +109,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         print("DESC: \(descAndImage.desc)")
         
         ///Nearby Section
+        celestialNearby.reloadData()
         celestialNearby.dataSource = self
         celestialNearby.delegate = self
         
@@ -238,12 +237,14 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == celestialNearby{
-            
+            info = []
             ///Update the entire view with the new info
             selectedCelestial = nearbyElem[indexPath.row]
-            self.navigationItem.title = selectedCelestial.englishName
+            print(selectedCelestial.englishName)
+            
+//            self.navigationItem.title = selectedCelestial.englishName
             updateUI()
-            self.viewDidLoad()
+//            self.viewDidLoad()
         }
     }
 
