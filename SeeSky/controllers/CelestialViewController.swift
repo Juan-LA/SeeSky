@@ -75,9 +75,16 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
 //        celestialNearby.reloadData()
         ///Update var Info
         info.append(selectedCelestial.bodyType)
-        info.append(String(selectedCelestial.equaRadius))
-        info.append(String(selectedCelestial.gravity))
-        info.append(String(selectedCelestial.aphelion))
+        if selectedCelestial.equaRadius != 0 {
+            info.append(String(selectedCelestial.equaRadius))
+        }
+        if selectedCelestial.gravity != 0 {
+            info.append(String(selectedCelestial.gravity))
+        }
+        if selectedCelestial.aphelion != 0 {
+            info.append(String(selectedCelestial.aphelion))
+        }
+        
         descAndImage = DescAndImage(englishName: "", url: "", desc: "")
         ///Update var DescAndImage
         descAndImage = getDescAndImage(englishName: selectedCelestial.englishName)
@@ -188,17 +195,26 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
             switch indexPath.row{
             case 0:
                 cell.dataLbl.text = "\(info[indexPath.row])"
+                
+                
+                
                 break
             default:
-                cell.dataLbl.text = "\(info[indexPath.row]) km"
+                
+                cell.dataLbl.text = "\(info[indexPath.row])\nkm"
+                    
+                
                 break
             }
             
-            cell.dataLbl.textColor = .white
+            
             
             ///Info
+            cell.dataLbl.textColor = .white
             cell.nameLbl.text = listInfo[indexPath.row]
             cell.nameLbl.textColor = .white
+            cell.divider.tintColor = .white
+            cell.divider.backgroundColor = .white
             
             ///Divider
             if indexPath.row == info.count - 1 {
@@ -253,6 +269,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
 //
 //    }
     
+    ///To show new elements at the bottom of the view
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == celestialNearby{
             info = []
@@ -266,10 +283,6 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
     @IBAction func favBtnPressed(_ sender: UIBarButtonItem) {
-        print("sono qui!!!!!!")
-        
-        print("BUTTON FAV PRESSED: ", selectedCelestial.englishName)
-        print(searchIfIsFav(selectedCelestial.englishName))
         
         if !searchIfIsFav(selectedCelestial.englishName) {
             favBtn.image = UIImage(systemName: "star.fill")?.withTintColor(.white)
