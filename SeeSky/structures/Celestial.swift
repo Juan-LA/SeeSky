@@ -327,7 +327,7 @@ func getListFav() -> [String]{
         let decoder = JSONDecoder()
         let object = try decoder.decode([String].self, from: data)
         // Usa l'oggetto "object" come desideri
-        print("SONO NELLA LETTuraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAaAaa")
+
         print(object)
         result = object
     } catch {
@@ -444,7 +444,7 @@ func getDescAndImage(englishName: String) -> DescAndImage {
 
 
 
-func searchIfItFav(_ str: String) -> Bool {
+func searchIfIsFav(_ str: String) -> Bool {
     let arr = getListFav2()
     print(arr)
     for i in arr {

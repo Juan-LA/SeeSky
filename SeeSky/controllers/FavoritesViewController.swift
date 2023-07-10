@@ -27,8 +27,11 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         
+        ///For Tab Bar background
+        self.tabBarController?.tabBar.backgroundImage = UIImage(named: "wallpaper")
+        self.tabBarController?.tabBar.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         
-        fav = getListFav2()
+        fav = getListFav2().sorted()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationItem.title = "Favorites"
@@ -55,7 +58,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        fav = getListFav2()
+        fav = getListFav2().sorted()
         noElem = fav.isEmpty
         if noElem {
             tableFavorite.isHidden = true
@@ -75,7 +78,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        fav = getListFav2()
+        fav = getListFav2().sorted()
         noElem = fav.isEmpty
         if noElem {
             tableFavorite.isHidden = true
@@ -116,7 +119,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
 //            celestial = getCelestial(celestials, nameOfCelestial!)
         cell.celestial = getCelestial(celestials, fav[indexPath.row])
         
-        if searchIfItFav(fav[indexPath.row]) {
+        if searchIfIsFav(fav[indexPath.row]) {
             cell.btn.setImage(UIImage(systemName: "star.fill")?.withTintColor(.white), for: .normal)
         }
         else {

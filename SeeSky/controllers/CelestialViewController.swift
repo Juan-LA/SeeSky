@@ -10,6 +10,7 @@ import Kingfisher
 
 class CelestialViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var favBtn: UIBarButtonItem!
     
     var selectedCelestial : Celestial = defaultCelestial
     var nextCelestial : Celestial = defaultCelestial
@@ -42,7 +43,9 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         
         
         super.viewDidLoad()
-        
+        ///Background for tab bar
+        self.tabBarController?.tabBar.backgroundImage = UIImage(named: "wallpaper")
+        self.tabBarController?.tabBar.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
 
         
         updateUI()
@@ -51,6 +54,16 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func updateUI() {
+        
+        ///is element a favourite?
+        if searchIfIsFav(selectedCelestial.englishName) {
+            favBtn.image = UIImage(systemName: "star.fill")?.withTintColor(.white)
+            
+        }
+        else {
+            favBtn.image = UIImage(systemName: "star")?.withTintColor(.white)
+        }
+        
         scrollVW.isScrollEnabled = true
         self.navigationItem.title = selectedCelestial.englishName
         
@@ -207,6 +220,11 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        if self.isMovingToParent {
+            listIsToRefresh = true
+            }
+        
     }
     
     
@@ -247,5 +265,31 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
 //            self.viewDidLoad()
         }
     }
+    @IBAction func favBtnPressed(_ sender: UIBarButtonItem) {
+        print("sono qui!!!!!!")
+        
+        print("BUTTON FAV PRESSED: ", selectedCelestial.englishName)
+        print(searchIfIsFav(selectedCelestial.englishName))
+        
+        if !searchIfIsFav(selectedCelestial.englishName) {
+            favBtn.image = UIImage(systemName: "star.fill")?.withTintColor(.white)
+            addToFav(selectedCelestial.englishName)
+        }
+        else {
+            favBtn.image = UIImage(systemName: "star")?.withTintColor(.white)
+            removeTheFavStar(selectedCelestial.englishName)
+        }
+    }
+    
+    
+    
+    
+    @IBAction func refreshPreviousPage(_ sender: UIBarButtonItem){
+        
+    }
+    
+    
+    
+    
 
 }

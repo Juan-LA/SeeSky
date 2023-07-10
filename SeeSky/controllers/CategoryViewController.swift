@@ -7,9 +7,11 @@
 
 import UIKit
 
+var listIsToRefresh : Bool = false
+
 class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+   
     
     @IBOutlet weak var categoryName: UILabel!
     
@@ -24,10 +26,17 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.titleView?.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
+//        self.navigationItem.titleView?.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
        
         ///Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
+        ///-For TabBar
+        self.tabBarController?.tabBar.backgroundImage = UIImage(named: "wallpaper")
+        self.tabBarController?.tabBar.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
+        ///-For NavBar
+       
+//        self.navigationController?.navigationBar.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
+//        self.navigationController?.navigationBar.backgroundImage = UIImage(named: "wallpaper")
         
         ///Text graphics
 //        categoryName.textColor = .white
@@ -46,6 +55,11 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        tableCatElem.reloadData()
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         elemCategory = getBodiesByCategory(celestials, selectedCategory)
@@ -71,19 +85,13 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.celestial = elemCategory[indexPath.row]
         
-        if searchIfItFav(elemCategory[indexPath.row].englishName) {
+        if searchIfIsFav(elemCategory[indexPath.row].englishName) {
             cell.btn.setImage(UIImage(systemName: "star.fill")?.withTintColor(.white), for: .normal)
-        }
-        else {
+        } else {
             cell.btn.setImage(UIImage(systemName: "star")?.withTintColor(.white), for: .normal)
         }
         
-        ///Button Star
-//        if elemCategory[indexPath.row].isFavorite {
-//            cell.btn.setImage(UIImage(systemName: "star.fill")?.withTintColor(.white), for: .normal)
-//        } else {
-//            cell.btn.setImage(UIImage(systemName: "star")?.withTintColor(.white), for: .normal)
-//        }
+        
         return cell
     }
     

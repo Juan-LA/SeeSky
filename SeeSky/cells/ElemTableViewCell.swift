@@ -38,9 +38,9 @@ class ElemTableViewCell: UITableViewCell {
             return
             }
         print("BUTTON FAV PRESSED: ", celestial.englishName)
-        print(searchIfItFav(celestial.englishName))
+        print(searchIfIsFav(celestial.englishName))
         
-        if !searchIfItFav(celestial.englishName) {
+        if !searchIfIsFav(celestial.englishName) {
             btn.setImage(UIImage(systemName: "star.fill")?.withTintColor(.white), for: .normal)
             addToFav(celestial.englishName)
         }
@@ -73,9 +73,9 @@ class ElemTableViewCell: UITableViewCell {
             return
             }
         print("BUTTON FAV PRESSED: ", celestial.englishName)
-        print(searchIfItFav(celestial.englishName))
+        print(searchIfIsFav(celestial.englishName))
         
-        if !searchIfItFav(celestial.englishName) {
+        if !searchIfIsFav(celestial.englishName) {
             btn.setImage(UIImage(systemName: "star.fill")?.withTintColor(.white), for: .normal)
             addToFav(celestial.englishName)
         }
