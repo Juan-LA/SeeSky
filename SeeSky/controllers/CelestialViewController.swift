@@ -16,7 +16,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
     var nextCelestial : Celestial = defaultCelestial
     
     var info : [String] = []
-    var listInfo: [String] = ["Type", "Radius", "Gravity", "Distance from Sun"]
+    var listInfo: [String] = ["Type"]
     
     var descAndImage : DescAndImage = DescAndImage(englishName: "", url: "", desc: "")
     
@@ -48,6 +48,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         self.tabBarController?.tabBar.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper")!)
 
         
+        
         updateUI()
 
         // Do any additional setup after loading the view.
@@ -58,6 +59,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         ///is element a favourite?
         if searchIfIsFav(selectedCelestial.englishName) {
             favBtn.image = UIImage(systemName: "star.fill")?.withTintColor(.white)
+            
             
         }
         else {
@@ -77,12 +79,15 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
         info.append(selectedCelestial.bodyType)
         if selectedCelestial.equaRadius != 0 {
             info.append(String(selectedCelestial.equaRadius))
+            listInfo.append("Radius")
         }
         if selectedCelestial.gravity != 0 {
             info.append(String(selectedCelestial.gravity))
+            listInfo.append("Gravity")
         }
         if selectedCelestial.aphelion != 0 {
             info.append(String(selectedCelestial.aphelion))
+            listInfo.append("Distance from Sun")
         }
         
         descAndImage = DescAndImage(englishName: "", url: "", desc: "")
@@ -101,6 +106,7 @@ class CelestialViewController: UIViewController, UICollectionViewDelegate, UICol
 //        celestialLbl.text = selectedCelestial.name
         
         print("Body type: \(selectedCelestial.bodyType)")
+        print("Aphelion: \(selectedCelestial.aphelion)")
         
         ///Celestial Image
         let url = descAndImage.url
