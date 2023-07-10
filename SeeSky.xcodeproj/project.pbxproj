@@ -39,6 +39,7 @@
 		3080C72629F82FE900271C7C /* ListBodies.json in Resources */ = {isa = PBXBuildFile; fileRef = 3080C72529F82FE900271C7C /* ListBodies.json */; };
 		3080C72829F8777F00271C7C /* ListFav.json in Resources */ = {isa = PBXBuildFile; fileRef = 3080C72729F8777F00271C7C /* ListFav.json */; };
 		3080C72A29F8856200271C7C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080C72929F8856200271C7C /* SettingViewController.swift */; };
+		30C8232C2A5C5030005FB2B3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8232B2A5C5030005FB2B3 /* SwiftUIView.swift */; };
 		30F34F382A00025F0080B4FC /* ListImages.json in Resources */ = {isa = PBXBuildFile; fileRef = 30F34F372A00025F0080B4FC /* ListImages.json */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		3080C72529F82FE900271C7C /* ListBodies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListBodies.json; sourceTree = "<group>"; };
 		3080C72729F8777F00271C7C /* ListFav.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListFav.json; sourceTree = "<group>"; };
 		3080C72929F8856200271C7C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		30C8232B2A5C5030005FB2B3 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		30F34F372A00025F0080B4FC /* ListImages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListImages.json; sourceTree = "<group>"; };
 		3312D2FC800194EDE3017AA1 /* Pods-SeeSky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeSky.release.xcconfig"; path = "Target Support Files/Pods-SeeSky/Pods-SeeSky.release.xcconfig"; sourceTree = "<group>"; };
 		59457E985522C42B03CD5579 /* Pods_SeeSky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeeSky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +182,7 @@
 				30694A0B2A1BA93000FD60DC /* RealityViewController.swift */,
 				30694A0F2A1BAC5300FD60DC /* Solar_System.usdz */,
 				30694A112A1BB11C00FD60DC /* Solar_System.scn */,
+				30C8232B2A5C5030005FB2B3 /* SwiftUIView.swift */,
 			);
 			path = SeeSky;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				3080C71B29F5885000271C7C /* InfoCollectionViewCell.swift in Sources */,
 				232C51DC29F13BF9003143AD /* Celestial.swift in Sources */,
 				23EFD86E29D387B50080E687 /* OTDCell.swift in Sources */,
+				30C8232C2A5C5030005FB2B3 /* SwiftUIView.swift in Sources */,
 				3080C72A29F8856200271C7C /* SettingViewController.swift in Sources */,
 				3080C71729F5622100271C7C /* CategoryViewController.swift in Sources */,
 				237A737E2A07893A00B2B2B1 /* NavigationViewController.swift in Sources */,
