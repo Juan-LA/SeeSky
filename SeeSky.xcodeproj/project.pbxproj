@@ -13,7 +13,6 @@
 		232C51E229F14D5A003143AD /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C51E129F14D5A003143AD /* FavTableViewCell.swift */; };
 		2333C28929FAE5E0000C74E3 /* SearchClickedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2333C28829FAE5E0000C74E3 /* SearchClickedViewController.swift */; };
 		2333C28B29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2333C28A29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift */; };
-		237A737C2A07875000B2B2B1 /* thePlanets.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 237A737B2A07874F00B2B2B1 /* thePlanets.rcproject */; };
 		237A737E2A07893A00B2B2B1 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237A737D2A07893A00B2B2B1 /* NavigationViewController.swift */; };
 		23AD842029D029EA0010D868 /* CelestialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD841F29D029EA0010D868 /* CelestialViewController.swift */; };
 		23EFD83C29D02BEC0080E687 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFD83B29D02BEC0080E687 /* data.swift */; };
@@ -26,6 +25,12 @@
 		3037C43D29CC818600CEFC73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3037C43B29CC818600CEFC73 /* Main.storyboard */; };
 		3037C43F29CC818A00CEFC73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3037C43E29CC818A00CEFC73 /* Assets.xcassets */; };
 		3037C44229CC818A00CEFC73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3037C44029CC818A00CEFC73 /* LaunchScreen.storyboard */; };
+		30694A022A15318500FD60DC /* CreditsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30694A012A15318500FD60DC /* CreditsTableViewCell.swift */; };
+		30694A042A179B1300FD60DC /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30694A032A179B1200FD60DC /* ARView.swift */; };
+		30694A082A1B640A00FD60DC /* solarsystem.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 30694A072A1B640A00FD60DC /* solarsystem.rcproject */; };
+		30694A0C2A1BA93000FD60DC /* RealityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30694A0B2A1BA93000FD60DC /* RealityViewController.swift */; };
+		30694A102A1BAC5400FD60DC /* Solar_System.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 30694A0F2A1BAC5300FD60DC /* Solar_System.usdz */; };
+		30694A122A1BB11C00FD60DC /* Solar_System.scn in Resources */ = {isa = PBXBuildFile; fileRef = 30694A112A1BB11C00FD60DC /* Solar_System.scn */; };
 		3080C6FD29F41ED900271C7C /* Celestials.json in Resources */ = {isa = PBXBuildFile; fileRef = 3080C6FC29F41ED800271C7C /* Celestials.json */; };
 		3080C71729F5622100271C7C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080C71629F5622100271C7C /* CategoryViewController.swift */; };
 		3080C71929F5629F00271C7C /* ElemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080C71829F5629F00271C7C /* ElemTableViewCell.swift */; };
@@ -43,7 +48,6 @@
 		232C51E129F14D5A003143AD /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
 		2333C28829FAE5E0000C74E3 /* SearchClickedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClickedViewController.swift; sourceTree = "<group>"; };
 		2333C28A29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedElementsTableViewCell.swift; sourceTree = "<group>"; };
-		237A737B2A07874F00B2B2B1 /* thePlanets.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = thePlanets.rcproject; sourceTree = "<group>"; };
 		237A737D2A07893A00B2B2B1 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		23AD841F29D029EA0010D868 /* CelestialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelestialViewController.swift; sourceTree = "<group>"; };
 		23EFD83B29D02BEC0080E687 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
@@ -57,6 +61,12 @@
 		3037C43C29CC818600CEFC73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3037C43E29CC818A00CEFC73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3037C44129CC818A00CEFC73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		30694A012A15318500FD60DC /* CreditsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsTableViewCell.swift; sourceTree = "<group>"; };
+		30694A032A179B1200FD60DC /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		30694A072A1B640A00FD60DC /* solarsystem.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = solarsystem.rcproject; sourceTree = "<group>"; };
+		30694A0B2A1BA93000FD60DC /* RealityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityViewController.swift; sourceTree = "<group>"; };
+		30694A0F2A1BAC5300FD60DC /* Solar_System.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Solar_System.usdz; sourceTree = "<group>"; };
+		30694A112A1BB11C00FD60DC /* Solar_System.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Solar_System.scn; sourceTree = "<group>"; };
 		3080C6FC29F41ED800271C7C /* Celestials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Celestials.json; sourceTree = "<group>"; };
 		3080C70029F494D000271C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3080C71629F5622100271C7C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +138,7 @@
 				3080C71829F5629F00271C7C /* ElemTableViewCell.swift */,
 				3080C71A29F5885000271C7C /* InfoCollectionViewCell.swift */,
 				2333C28A29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift */,
+				30694A012A15318500FD60DC /* CreditsTableViewCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -153,6 +164,7 @@
 		3037C43429CC818600CEFC73 /* SeeSky */ = {
 			isa = PBXGroup;
 			children = (
+				30694A072A1B640A00FD60DC /* solarsystem.rcproject */,
 				3080C70029F494D000271C7C /* Info.plist */,
 				23EFD86829D2DAB90080E687 /* cells */,
 				23EFD83A29D02BDB0080E687 /* dummyData */,
@@ -161,10 +173,13 @@
 				3037C43529CC818600CEFC73 /* AppDelegate.swift */,
 				3037C43729CC818600CEFC73 /* ViewController.swift */,
 				3037C43929CC818600CEFC73 /* Experience.rcproject */,
-				237A737B2A07874F00B2B2B1 /* thePlanets.rcproject */,
 				3037C43B29CC818600CEFC73 /* Main.storyboard */,
 				3037C43E29CC818A00CEFC73 /* Assets.xcassets */,
 				3037C44029CC818A00CEFC73 /* LaunchScreen.storyboard */,
+				30694A032A179B1200FD60DC /* ARView.swift */,
+				30694A0B2A1BA93000FD60DC /* RealityViewController.swift */,
+				30694A0F2A1BAC5300FD60DC /* Solar_System.usdz */,
+				30694A112A1BB11C00FD60DC /* Solar_System.scn */,
 			);
 			path = SeeSky;
 			sourceTree = "<group>";
@@ -246,12 +261,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30694A102A1BAC5400FD60DC /* Solar_System.usdz in Resources */,
 				3080C72629F82FE900271C7C /* ListBodies.json in Resources */,
 				3080C6FD29F41ED900271C7C /* Celestials.json in Resources */,
 				3037C44229CC818A00CEFC73 /* LaunchScreen.storyboard in Resources */,
 				3080C72429F754BA00271C7C /* ListImgUrl.json in Resources */,
 				3080C72829F8777F00271C7C /* ListFav.json in Resources */,
 				3037C43F29CC818A00CEFC73 /* Assets.xcassets in Resources */,
+				30694A122A1BB11C00FD60DC /* Solar_System.scn in Resources */,
 				3037C43D29CC818600CEFC73 /* Main.storyboard in Resources */,
 				30F34F382A00025F0080B4FC /* ListImages.json in Resources */,
 			);
@@ -315,13 +332,16 @@
 				3080C72A29F8856200271C7C /* SettingViewController.swift in Sources */,
 				3080C71729F5622100271C7C /* CategoryViewController.swift in Sources */,
 				237A737E2A07893A00B2B2B1 /* NavigationViewController.swift in Sources */,
+				30694A082A1B640A00FD60DC /* solarsystem.rcproject in Sources */,
 				3080C71929F5629F00271C7C /* ElemTableViewCell.swift in Sources */,
 				23EFD86729D2D5680080E687 /* SearchViewController.swift in Sources */,
 				232C51E229F14D5A003143AD /* FavTableViewCell.swift in Sources */,
+				30694A042A179B1300FD60DC /* ARView.swift in Sources */,
 				232C51E029F1464E003143AD /* FavoritesViewController.swift in Sources */,
+				30694A022A15318500FD60DC /* CreditsTableViewCell.swift in Sources */,
 				3037C43829CC818600CEFC73 /* ViewController.swift in Sources */,
+				30694A0C2A1BA93000FD60DC /* RealityViewController.swift in Sources */,
 				3037C43629CC818600CEFC73 /* AppDelegate.swift in Sources */,
-				237A737C2A07875000B2B2B1 /* thePlanets.rcproject in Sources */,
 				2333C28B29FAE85F000C74E3 /* SearchedElementsTableViewCell.swift in Sources */,
 				3037C43A29CC818600CEFC73 /* Experience.rcproject in Sources */,
 				23AD842029D029EA0010D868 /* CelestialViewController.swift in Sources */,
@@ -472,9 +492,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4Q64HMZS63;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeeSky/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -482,8 +503,8 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,9 +530,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4Q64HMZS63;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeeSky/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -519,8 +541,8 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
