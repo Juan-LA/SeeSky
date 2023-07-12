@@ -10,17 +10,24 @@ import RealityKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var arView: ARView!
+   @IBOutlet var arView: ARView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         
         // Load the "Box" scene from the "Experience" Reality File
-        let planetes = try! ThePlanets.loadScena()
-        
+        guard let anchor = try? Solarsystem.loadScena() else { return }
         // Add the box anchor to the scene
-        arView.scene.anchors.append(planetes)
+        anchor.position = SIMD3(x: 10, y: 10, z: 0)
+        arView.scene.anchors.append(anchor)
+        
+        
+        
+        
+        
+        
     }
 }
